@@ -42,6 +42,7 @@ const styles = StyleSheet.create({
         backgroundColor: colors.lightGrey,
         borderColor: colors.primary,
         color: colors.black,
+        
         },
       
   });
