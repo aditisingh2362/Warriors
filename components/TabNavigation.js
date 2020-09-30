@@ -2,7 +2,6 @@ import React from 'react'
 import { StyleSheet} from 'react-native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeScreen from '../screens/HomeScreen';
-import Ionicons from 'react-native-vector-icons/Ionicons';
 import Entypo from 'react-native-vector-icons/Entypo';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import StoryScreen from '../screens/StoryScreen';

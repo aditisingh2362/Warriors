@@ -9,7 +9,7 @@ const DoctorOption = () => {
         <View style={{ position: "absolute", alignItems: 'center' }}>
             <View style={styles.button}>
                 <TouchableHighlight underlayColor={colors.accent}>
-                    <Fontisto name="doctor" size={36} color="white" />
+                    <Fontisto name="doctor" size={30} color="white" />
                 </TouchableHighlight>
             </View>
         </View>
@@ -20,14 +20,14 @@ export default DoctorOption
 
 const styles = StyleSheet.create({
     button: {
-        backgroundColor: colors.primary,
+        backgroundColor: colors.tertiary,
         alignItems: 'center',
         justifyContent: 'center',
-        width: 72,
-        height: 72,
+        width: 65,
+        height: 65,
         borderRadius: 36,
         position: 'absolute',
-        top: -60,
+        top: -50,
         elevation: 10,
         shadowColor: 'white'
 
