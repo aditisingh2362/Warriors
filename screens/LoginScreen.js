@@ -43,7 +43,11 @@ const LoginScreen = () => {
                 <TextInput placeholder='Email' style={styles.email_box}/>
                 <TextInput placeholder='Password' secureTextEntry={true} style={styles.password_box}/>
              </View>
+             
              <Text style={styles.forgot_password}>Forgot password</Text>
+               
+             
+             
              {/* <View style={styles.login_button}>
              <Button title="Login" color={colors.primary}>
              </Button>
@@ -51,9 +55,14 @@ const LoginScreen = () => {
              <TouchableHighlight style={styles.login_button}>
                  <Text style={styles.login_text}>Login</Text>
              </TouchableHighlight>
+             <Text style={{alignSelf:'center', fontFamily:'Quicksand-Medium',marginBottom:25}}>Don't have an account?<Text style={{textDecorationLine:'underline', fontFamily:'Quicksand-Medium', color:colors.tertiary}}>Signup</Text></Text>
+             <View style={{flex:1, flexDirection:'row', width :Dimensions.get('window').width, justifyContent: 'space-between'}}>
              <View style={styles.design}>
-            
              </View>
+             <View style={styles.design2}>
+             </View>
+             </View>
+
             </SafeAreaView>
         )
       }
@@ -75,15 +84,15 @@ const styles = StyleSheet.create({
         justifyContent:'center',
         textAlign:'center',
         fontSize:35,
-        marginTop:10,
+        marginTop:20,
         fontFamily:'Mightype-Script',
        
     },
     text_area:{
         backgroundColor:colors.redPink,
-        height: 300,
-        borderBottomLeftRadius:300,
-        borderBottomRightRadius:0,
+        height: 270,
+        borderBottomLeftRadius:0,
+        borderBottomRightRadius:300,
         shadowColor: '#000',
         shadowOffset: { width: 0, height: 2 },
         shadowOpacity: 0.5,
@@ -94,10 +103,10 @@ const styles = StyleSheet.create({
     },
     welcome:{
         
-        textAlign:'right',
+        textAlign:'left',
         fontSize:35,
         fontWeight:'600',
-        alignSelf:'flex-end',
+        alignSelf:'flex-start',
         justifyContent:'flex-start',
         marginTop:50,
         marginLeft:20,
@@ -106,10 +115,10 @@ const styles = StyleSheet.create({
     },
     continue:{
         
-        textAlign:'right',
+        textAlign:'left',
         fontSize:18,
         fontWeight:'600',
-        alignSelf:'flex-end',
+        alignSelf:'flex-start',
         color:colors.white,
         marginTop:5,
         marginLeft:20,
@@ -133,7 +142,7 @@ const styles = StyleSheet.create({
         textAlign:'left',
         width :Dimensions.get('window').width-20,
         height: 55,
-        backgroundColor: colors.lightPink,
+        backgroundColor: colors.lightLilac,
         justifyContent:'center',
         alignSelf:'center',
         marginTop:35,
@@ -144,6 +153,7 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.5,
         shadowRadius: 2,
         elevation: 5,
+        fontFamily: 'Quicksand-Medium'
         
         
         
@@ -154,7 +164,7 @@ const styles = StyleSheet.create({
             textAlign:'left',
             width :Dimensions.get('window').width-20,
             height: 55,
-            backgroundColor: colors.lightPink,
+            backgroundColor: colors.lightLilac,
             marginTop:15,
             borderRadius:17,
             padding:10,
@@ -163,6 +173,7 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.5,
         shadowRadius: 2,
         elevation: 5,
+        fontFamily: 'Quicksand-Medium'
             
            
             },
@@ -174,7 +185,7 @@ const styles = StyleSheet.create({
                 backgroundColor:colors.redPink,
                 justifyContent:'center',
                 alignSelf:'center',
-                marginTop:15,
+                marginTop:30,
                 shadowColor: '#000',
         shadowOffset: { width: 0, height: 2 },
         shadowOpacity: 0.5,
@@ -183,25 +194,51 @@ const styles = StyleSheet.create({
             },
             design:{
                 
-        backgroundColor:colors.redPink,
-        height: 600,
-        borderTopLeftRadius:600,
-        borderTopRightRadius:600,
+        backgroundColor:colors.pastelPink,
+        height: 100,
+        borderTopLeftRadius:0,
+        borderTopRightRadius:100,
         shadowColor: '#000',
         shadowOffset: { width: 0, height: 2 },
         shadowOpacity: 0.5,
         shadowRadius: 2,
         elevation: 20,
-        justifyContent:'flex-end',
+        justifyContent:'flex-start',
+        marginTop: 10,
+        alignSelf:'flex-start',
+        width:90,
+        flex:0
        
         
             },
+            design2:{
+                
+                backgroundColor:colors.pastelPink,
+                height: 200,
+                borderTopLeftRadius:100,
+                borderBottomLeftRadius:100,
+                shadowColor: '#000',
+                shadowOffset: { width: 0, height: 2 },
+                shadowOpacity: 0.5,
+                shadowRadius: 2,
+                elevation: 20,
+                justifyContent:'flex-end',
+                marginTop: 10,
+                alignSelf:'flex-end',
+                width:90,
+                flex:0
+               
+                
+                    },
             forgot_password:{
                 fontFamily:'Quicksand-Medium',
                 color: colors.tertiary,
                 marginTop:20,
                 alignSelf:'flex-end',
-                marginEnd:20
+                marginEnd:20,
+                justifyContent:'flex-end',
+                textDecorationLine: 'underline',
+                // textDecorationColor:colors.tertiary
             },
             login_text:{
                 fontFamily:'Quicksand-Medium',

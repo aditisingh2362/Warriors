@@ -10,7 +10,9 @@ const colors = {
     red: '#FF0000',
     lightGrey: '#f5f5f5',
     lightPink: '#ffecf2',
-    redPink:'#f7536e'
+    redPink:'#f7536e',
+    pastelPink:'#ffd1dc',
+    lightLilac:'#ffefef'
   };
   
   const sizes = {
