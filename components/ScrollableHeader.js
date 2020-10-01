@@ -10,7 +10,7 @@ import {
 import { colors } from '../constants/theme';
 import Entypo from 'react-native-vector-icons/Entypo';
 const HEADER_MAX_HEIGHT = 250;
-const HEADER_MIN_HEIGHT = 80;
+const HEADER_MIN_HEIGHT = 35;
 const HEADER_SCROLL_DISTANCE = HEADER_MAX_HEIGHT - HEADER_MIN_HEIGHT;
 
 function ScrollableHeader({ route }) {
@@ -138,7 +138,7 @@ const styles = StyleSheet.create({
     top: 0,
     left: 0,
     right: 0,
-    backgroundColor: colors.secondary,
+    backgroundColor: colors.primary,
     overflow: 'hidden',
     height: HEADER_MAX_HEIGHT,
     elevation: 20
