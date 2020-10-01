@@ -3,12 +3,14 @@ import { StyleSheet, Text, View } from 'react-native'
 import VerticleBlogCard from '../components/VerticleBlogCard'
 import HorizontalBlogCard from '../components/HorizontalBlogCard'
 import { Searchbar } from 'react-native-paper';
-import { ScrollView, FlatList } from 'react-native-gesture-handler';
+import { ScrollView, FlatList, TouchableOpacity } from 'react-native-gesture-handler';
 import Entypo from 'react-native-vector-icons/Entypo';
 import { colors } from '../constants/theme';
 import { articles } from '../constants/articles';
+import { useNavigation } from '@react-navigation/native';
 
 const StoryScreen = () => {
+    const navigation=useNavigation();
     const [article, setarticle] = useState('')
     const lapsList = articles.map((item) => {
         return (
@@ -35,7 +37,9 @@ const StoryScreen = () => {
                     onChangeText={setarticle}
                     value={article}
                 />
+                <TouchableOpacity onPress={()=>navigation.navigate('Add')}>
                 <Entypo name="pencil" size={35} color={colors.tertiary} />
+                </TouchableOpacity>
                 </View>
             <Text style={styles.text}>Popular Stories</Text>
             <View style={{flexDirection:'row'}}>
