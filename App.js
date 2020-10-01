@@ -1,12 +1,13 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import HomeScreen from './screens/HomeScreen';
+import LoginScreen from './screens/LoginScreen';
 
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <HomeScreen/>
+      <LoginScreen/>
     </View>
   );
 }

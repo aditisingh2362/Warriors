@@ -9,6 +9,8 @@ const colors = {
     gray2: '#C5CCD6',
     red: '#FF0000',
     lightGrey: '#f5f5f5',
+    lightPink: '#ffecf2',
+    redPink:'#f7536e'
   };
   
   const sizes = {

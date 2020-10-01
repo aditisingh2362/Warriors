@@ -8,11 +8,17 @@
     "eject": "expo eject"
   },
   "dependencies": {
+    "@use-expo/font": "^2.0.0",
     "expo": "~39.0.2",
+    "expo-font": "~8.3.0",
+    "expo-linear-gradient": "~8.3.0",
     "expo-status-bar": "~1.0.2",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-native": "https://github.com/expo/react-native/archive/sdk-39.0.2.tar.gz",
+    "react-native-floating-label-text-input": "^0.1.5",
+    "react-native-material-textfield": "^0.16.1",
+    "react-native-textinput-effects": "^0.6.1",
     "react-native-web": "~0.13.12"
   },
   "devDependencies": {
