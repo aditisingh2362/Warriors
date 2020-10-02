@@ -1,10 +1,16 @@
 {
   "devToolsPort": 19002,
   "expoServerPort": 19000,
+<<<<<<< HEAD
   "packagerPort": 19003,
   "packagerPid": 5147,
+=======
+
+  "packagerPort": 19001,
+  "packagerPid": 32652,
+>>>>>>> c6fac6d650458163dff9c6344d284f1abcbeb095
   "expoServerNgrokUrl": null,
   "packagerNgrokUrl": null,
-  "ngrokPid": null,
-  "webpackServerPort": null
+  "ngrokPid": null
+
 }
