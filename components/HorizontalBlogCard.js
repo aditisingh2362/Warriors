@@ -62,7 +62,6 @@ const styles = StyleSheet.create({
         borderRadius: 6,
         flexDirection: 'row',
         alignItems: 'center',
-        backgroundColor: 'white'
     },
     image: {
         height: 90,

@@ -103,8 +103,7 @@ const styles = StyleSheet.create({
     flex: 1,
     top: 30,
     marginBottom: 60,
-    backgroundColor: "#eff3fb",
-  },
+    },
   text: {
     fontSize: 27,
     marginLeft: 12,
