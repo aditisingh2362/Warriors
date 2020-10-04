@@ -1,9 +1,9 @@
 {
   "devToolsPort": 19002,
   "expoServerPort": 19000,
-  "packagerPort": 19003,
-  "packagerPid": 18575,
+  "packagerPort": 19001,
+  "packagerPid": 23416,
   "expoServerNgrokUrl": "https://37-ecu.anonymous.warriors.exp.direct",
   "packagerNgrokUrl": "https://packager.37-ecu.anonymous.warriors.exp.direct",
-  "ngrokPid": 18617
+  "ngrokPid": 23442
 }
