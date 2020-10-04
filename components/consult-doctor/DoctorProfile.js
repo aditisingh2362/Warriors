@@ -82,15 +82,12 @@ const Availabilty = () => {
       >
         <View style={styles.dateCard}>
           <Text style={{ fontSize: 12 }}>Sat</Text>
-          <Text style={{ fontFamily: 'Roboto_500Medium', fontSize: 22 }}>
-            08
-          </Text>
+          <Text style={{ fontSize: 22 }}>08</Text>
         </View>
         <View style={styles.dateCardSelected}>
           <Text style={{ fontSize: 12, color: colors.white }}>Sun</Text>
           <Text
             style={{
-              fontFamily: 'Roboto_500Medium',
               fontSize: 22,
               color: colors.white
             }}
@@ -100,15 +97,11 @@ const Availabilty = () => {
         </View>
         <View style={styles.dateCard}>
           <Text style={{ fontSize: 12 }}>Mon</Text>
-          <Text style={{ fontFamily: 'Roboto_500Medium', fontSize: 22 }}>
-            10
-          </Text>
+          <Text style={{ fontSize: 22 }}>10</Text>
         </View>
         <View style={styles.dateCard}>
           <Text style={{ fontSize: 12 }}>Tue</Text>
-          <Text style={{ fontFamily: 'Roboto_500Medium', fontSize: 22 }}>
-            11
-          </Text>
+          <Text style={{ fontSize: 22 }}>11</Text>
         </View>
       </View>
       <View
