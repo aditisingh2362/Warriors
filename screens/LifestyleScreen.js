@@ -1,10 +1,11 @@
 import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
+import QuickSandSemiBold from '../constants/QuickSandSemiBold'
 
 const LifestyleScreen = () => {
     return (
         <View style={styles.container}>
-            <Text>Lifestyle Screen</Text>
+            <QuickSandSemiBold>Lifestyle Screen</QuickSandSemiBold>
         </View>
     )
 }
