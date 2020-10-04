@@ -8,28 +8,14 @@ import {
 } from "react-native-pell-rich-editor";
 import Entypo from 'react-native-vector-icons/Entypo';
 import { colors } from "../constants/theme";
+import QuickSandBold from "../constants/QuickSandBold";
 
 const AddStory = () => {
   const strikethrough = require("../assets/strikethrough.png"); //icon for strikethrough
   const video = require("../assets/video.png"); //icon for Addvideo
   const RichText = useRef(); //reference to the RichEditor component
   const [article, setArticle] = useState("");
-
-  // this function will be called when the editor has been initialized
-  function editorInitializedCallback() {
-    // RichText.current?.registerToolbar(function (items) {
-    //   // items contain all the actions that are currently active
-    //   console.log(
-    //     "Toolbar click, selected items (insert end callback):",
-    //     items
-    //   );
-    // });
-  }
-
-  // Callback after height change
-  function handleHeightChange(height) {
-    // console.log("editor height change:", height);
-  }
+  
 
   function onPressAddImage() {
     // you can easily add images from your gallery
@@ -47,16 +33,14 @@ const AddStory = () => {
 
   return (
     <ScrollView style={styles.container}>
-      
+      <QuickSandBold style={{fontSize: 21, marginVertical: 10, textAlign: 'center'}}>Share your Story</QuickSandBold>
       <RichEditor
         disabled={false}
         containerStyle={styles.editor}
         ref={RichText}
         style={styles.rich}
-        placeholder={"Title"}
+        placeholder={"Start Writing Here!"}
         onChange={(text) => setArticle(text)}
-        editorInitializedCallback={editorInitializedCallback}
-        onHeightChange={handleHeightChange}
       />
       <RichToolbar
         style={[styles.richBar]}
@@ -83,10 +67,10 @@ const AddStory = () => {
         }}
         insertVideo={insertVideo}
       />
-      <TouchableOpacity style={{alignItems:'center', borderWidth: 1, borderColor: "purple", borderRadius: 10, marginBottom: 10}} onPress={()=>console.log("")}>
-        <Text style={[styles.text]}>
+      <TouchableOpacity style={{alignItems:'center', marginLeft: 70,width: 200,marginVertical: 10,borderWidth: 1, borderColor: "purple", borderRadius: 10, marginBottom: 10,backgroundColor: 'white', marginBottom: 30}} onPress={()=>console.log("")}>
+        <QuickSandBold style={[styles.text]}>
             <Entypo name="check" size= {16} color="purple"/>  Publish Article
-        </Text>
+        </QuickSandBold>
       </TouchableOpacity>
     </ScrollView>
   );
@@ -116,7 +100,7 @@ const styles = StyleSheet.create({
   editor: {
     backgroundColor: "black",
     borderColor: "pink",
-    borderWidth: 2,
+    borderWidth: 0.8,
   },
   rich: {
     minHeight: 450,
@@ -127,10 +111,9 @@ const styles = StyleSheet.create({
     backgroundColor: "#F5FCFF",
   },
   text: {
-    fontWeight: "bold",
     fontSize: 15,
     margin: 10,
-    color: colors.secondary
+    color: colors.black
   },
   tib: {
     textAlign: "center",

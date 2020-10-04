@@ -3,12 +3,11 @@ import { StyleSheet, Text, View } from "react-native";
 import { Col, Row, Grid } from "react-native-easy-grid";
 import LifestyleCard from "../components/LifestyleCard";
 import { ScrollView } from "react-native-gesture-handler";
-import { colors } from "../constants/theme";
-
+import QuickSandBold from "../constants/QuickSandBold";
 const LifestyleScreen = () => {
   return (
     <ScrollView style={styles.container}>
-        <Text style={{marginLeft: 10, fontSize: 30}}>Health Dashboard</Text>
+      <QuickSandBold style={{marginLeft: 10, fontSize: 30, marginVertical: 20}}>Health Dashboard</QuickSandBold>
       <Grid>
         <Col>
           <Row>
@@ -54,7 +53,7 @@ const LifestyleScreen = () => {
               denominator="3"
               unit="Litres"
               bgcolor="#e9ecf3"
-              text="Advised 2-3 litres"
+              text=""
             />
           </Row>
           <Row>
@@ -65,7 +64,7 @@ const LifestyleScreen = () => {
               denominator="9"
               unit="Hours"
               bgcolor="#f4f3f1"
-              text="Advised 7-9 hours"
+              text=""
             />
           </Row>
           <Row>
@@ -76,7 +75,7 @@ const LifestyleScreen = () => {
               denominator="1535"
               unit="Cal"
               bgcolor="#fbc5c3"
-              text="Go eat something!"
+              text=""
             />
           </Row>
           <Row>
@@ -87,7 +86,7 @@ const LifestyleScreen = () => {
               denominator="0"
               unit="BPM"
               bgcolor="#e2f0d9"
-              text="Check your pulse regularly"
+              text=""
             />
           </Row>
         </Col>
