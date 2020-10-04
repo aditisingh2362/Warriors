@@ -1,3 +1,6 @@
+import * as Font from 'expo-font';
+import { useFonts } from '@use-expo/font';
+
 const colors = {
 
     accent: '#f18b8b',
@@ -56,6 +59,14 @@ const colors = {
       fontSize: sizes.caption,
     },
   };
+
   
-  export { colors, sizes, fonts };
+  const fontFamily={
+    fontFamilyBold: 'Quicksand-Bold',
+    fontFamilyMedium: 'Quicksand-Medium',
+    fontFamilyCursive: 'Mightype-Script'
+
+  }
+  
+  export { colors, sizes, fonts, fontFamily };
   

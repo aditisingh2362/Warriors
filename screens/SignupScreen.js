@@ -17,11 +17,11 @@ const SignupScreen = () => {
     //    else
     //    {
         const [loaded,error] = useFonts({
-                'Mightype-Script': require('/home/medhavi/Warriors/assets/fonts/Mightype-Script.otf'),
-                'Quanto-0Wg1G' : require('/home/medhavi/Warriors/assets/fonts/Quanto-0Wg1G.ttf'),
-                'BrighlyCrushShine-8Ma90': require('/home/medhavi/Warriors/assets/fonts/BrighlyCrushShine-8Ma90.otf'),
-                'Quicksand-Bold': require('/home/medhavi/Warriors/assets/fonts/Quicksand-Bold.ttf'),
-                'Quicksand-Medium': require('/home/medhavi/Warriors/assets/fonts/Quicksand-Medium.ttf')
+                'Mightype-Script': require('../assets/fonts/Mightype-Script.otf'),
+                'Quanto-0Wg1G' : require('../assets/fonts/Quanto-0Wg1G.ttf'),
+                'BrighlyCrushShine-8Ma90': require('../assets/fonts/BrighlyCrushShine-8Ma90.otf'),
+                'Quicksand-Bold': require('../assets/fonts/Quicksand-Bold.ttf'),
+                'Quicksand-Medium': require('../assets/fonts/Quicksand-Medium.ttf')
                });
         if(!loaded)
         {
