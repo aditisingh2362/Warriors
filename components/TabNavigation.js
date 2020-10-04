@@ -4,12 +4,12 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeScreen from '../screens/HomeScreen';
 import Entypo from 'react-native-vector-icons/Entypo';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
-import StoryScreen from '../screens/StoryScreen';
 import ExamineScreen from '../screens/ExamineScreen';
 import LifestyleScreen from '../screens/LifestyleScreen';
 import DoctorComponent from './DoctorComponent';
 import DoctorOption from './DoctorOption';
 import { colors } from '../constants/theme';
+import StoryScreenStack from '../screens/StoryScreenStack';
 
 
 
@@ -47,6 +47,7 @@ const BottomNavigation = () => {
                     backgroundColor: '#535353',
                     marginTop: 0,
                     borderTopWidth: 0,
+                    elevation: 10
                 },
                 iconStyle: {
                     margin: 8,
@@ -55,7 +56,7 @@ const BottomNavigation = () => {
             }}
         >
             <Tab.Screen name="Home" component={HomeScreen} />
-            <Tab.Screen name="Story" component={StoryScreen} />
+            <Tab.Screen name="Story" component={StoryScreenStack} />
             <Tab.Screen name="Doctor" component={DoctorComponent}  />
             <Tab.Screen name="Examine" component={ExamineScreen} />
             <Tab.Screen name="Lifestyle" component={LifestyleScreen} />
