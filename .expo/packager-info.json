@@ -1,14 +1,9 @@
 {
-  "expoServerPort": 19000,
-  "expoServerNgrokUrl": "https://37-ecu.anonymous.warriors.exp.direct",
-  "packagerNgrokUrl": "https://packager.37-ecu.anonymous.warriors.exp.direct",
-  "ngrokPid": 5450,
-  "devToolsPort": 19002,
-<<<<<<< HEAD
-  "packagerPort": 19003,
-  "packagerPid": 23695
-=======
-  "packagerPort": 19001,
-  "packagerPid": 5423
->>>>>>> e9267efeeb8b015c0bb6bf5a79ab0cc583e42d3d
-}
+    "expoServerPort": 19000,
+    "expoServerNgrokUrl": "https://37-ecu.anonymous.warriors.exp.direct",
+    "packagerNgrokUrl": "https://packager.37-ecu.anonymous.warriors.exp.direct",
+    "ngrokPid": 5450,
+    "devToolsPort": 19002,
+    "packagerPort": 19001,
+    "packagerPid": 5423
+  }
