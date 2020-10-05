@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  StyleSheet,
-  Text,
-  View,
-  SafeAreaView,
-  Dimensions,
-} from "react-native";
+import { StyleSheet, Text, View, SafeAreaView, Dimensions } from "react-native";
 import { colors } from "../constants/theme";
 import QuickSandBold from "../constants/QuickSandBold.js";
 import QuickSandSemiBold from "../constants/QuickSandBold.js";
@@ -19,7 +13,7 @@ import { useNavigation } from "@react-navigation/native";
 
 const LoginScreen = () => {
   const dispatch = useDispatch();
-    const navigation=useNavigation();
+  const navigation = useNavigation();
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.text_area}>
@@ -55,7 +49,7 @@ const LoginScreen = () => {
           alignItems: "baseline",
           justifyContent: "center",
         }}
-        onPress={()=>navigation.navigate('SignUp')}
+        onPress={() => navigation.navigate("SignUp")}
       >
         <QuickSandRegular>Don't have an account? </QuickSandRegular>
 

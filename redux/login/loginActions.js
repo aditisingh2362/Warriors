@@ -1,9 +1,9 @@
 import { SET_LOGIN_TRUE } from "./loginTypes";
 
-function setLoginTrue(){
-    return{
-        type: SET_LOGIN_TRUE
-    }
+function setLoginTrue() {
+  return {
+    type: SET_LOGIN_TRUE,
+  };
 }
 
-export default setLoginTrue
+export default setLoginTrue;

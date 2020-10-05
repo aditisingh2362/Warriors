@@ -1,5 +1,4 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
 import { createStackNavigator } from "@react-navigation/stack";
 import LoginScreen from "../screens/LoginScreen";
 import SignupScreen from "../screens/SignupScreen";
@@ -20,5 +19,3 @@ const LoginStackNavigation = () => {
 };
 
 export default LoginStackNavigation;
-
-const styles = StyleSheet.create({});

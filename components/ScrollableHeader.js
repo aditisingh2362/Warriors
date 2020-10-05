@@ -1,12 +1,5 @@
 import React, { useRef } from "react";
-import {
-  SafeAreaView,
-  StyleSheet,
-  Image,
-  View,
-  Text,
-  Animated,
-} from "react-native";
+import { SafeAreaView, StyleSheet, Image, View, Animated } from "react-native";
 import { colors } from "../constants/theme";
 import Entypo from "react-native-vector-icons/Entypo";
 import QuickSandRegular from "../constants/QuickSandRegular";
@@ -98,15 +91,21 @@ function ScrollableHeader({ route }) {
           }}
         />
         <QuickSandRegular style={styles.text}>{content}</QuickSandRegular>
-        <View style={{flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}}>
+        <View
+          style={{
+            flexDirection: "row",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
           <QuickSandRegular style={styles.textDate}>
-            <Entypo name="dot-single" color={colors.primary} size={20}/>
+            <Entypo name="dot-single" color={colors.primary} size={20} />
           </QuickSandRegular>
           <QuickSandRegular style={styles.textDate}>
-            <Entypo name="dot-single" color={colors.primary} size={20}/>
+            <Entypo name="dot-single" color={colors.primary} size={20} />
           </QuickSandRegular>
           <QuickSandRegular style={styles.textDate}>
-            <Entypo name="dot-single" color={colors.primary} size={20}/>
+            <Entypo name="dot-single" color={colors.primary} size={20} />
           </QuickSandRegular>
         </View>
       </Animated.ScrollView>
@@ -149,7 +148,7 @@ const styles = StyleSheet.create({
   saveArea: {
     flex: 1,
     backgroundColor: "#eff3fb",
-    marginVertical: 30
+    marginVertical: 30,
   },
   card: {
     flexDirection: "row",

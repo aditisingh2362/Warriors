@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet } from "react-native";
 import { Col, Row, Grid } from "react-native-easy-grid";
 import LifestyleCard from "../components/LifestyleCard";
 import { ScrollView } from "react-native-gesture-handler";
@@ -7,7 +7,11 @@ import QuickSandBold from "../constants/QuickSandBold";
 const LifestyleScreen = () => {
   return (
     <ScrollView style={styles.container}>
-      <QuickSandBold style={{marginLeft: 10, fontSize: 30, marginVertical: 20}}>Health Dashboard</QuickSandBold>
+      <QuickSandBold
+        style={{ marginLeft: 10, fontSize: 30, marginVertical: 20 }}
+      >
+        Health Dashboard
+      </QuickSandBold>
       <Grid>
         <Col>
           <Row>

@@ -3,10 +3,8 @@ import {
   StyleSheet,
   View,
   ImageBackground,
-  Text,
   Image,
   TouchableOpacity,
-  TouchableOpacityBase,
 } from "react-native";
 import { colors } from "../constants/theme";
 import Entypo from "react-native-vector-icons/Entypo";
