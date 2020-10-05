@@ -8,46 +8,52 @@ import QuickSandMedium from '../constants/QuickSandMedium'
 import QuickSandRegular from '../constants/QuickSandRegular'
 import QuickSandBold from '../constants/QuickSandBold'
 import ArticleCard from '../components/ArticleCard.js'
+import Entypo from 'react-native-vector-icons/Entypo';
 
 const Data=[
     {
         id: '1',
-        img: 'https://affairscloud.com/breast-cancer-awareness-month-2020-1st-31st-october/',
+        img: 'https://www.intimina.com/blog/wp-content/uploads/2014/09/INTIMINA-130-sexuality-after-breast-cancer.jpg',
         title: 'Breast Cancer and Nutrition: Tips for Maintaining a Healthy Diet',
         description:'Nausea, vomiting, and mouth sores are all common side effects of breast cancer treatment. When you feel sick to your stomach and your mouth hurts, you may start to dread mealtimes.Yet eating a balanced diet is especially important when you have breast cancer. Proper nutrition helps your body heal from treatment. Eating right will keep you at a healthy weight and help preserve your muscle strength.\n'
     },
     {
         id: '2',
-        img: 'https://affairscloud.com/breast-cancer-awareness-month-2020-1st-31st-october/',
+        img: 'https://www.mybuckhannon.com/wp-content/uploads/2019/10/breast-cancer-awareness-month.jpg',
         title: 'For Women with Breast Cancer, Regular Exercise May Improve Survival',
         description:'Nausea, vomiting, and mouth sores are all common side effects of breast cancer treatment. When you feel sick to your stomach and your mouth hurts, you may start to dread mealtimes.Yet eating a balanced diet is especially important when you have breast cancer. Proper nutrition helps your body heal from treatment. Eating right will keep you at a healthy weight and help preserve your muscle strength.\n'
     },
     {
         id: '3',
-        img: 'https://affairscloud.com/breast-cancer-awareness-month-2020-1st-31st-october/',
+        img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQN9M5Q1gGKU2BPveyjHo_PqR8XFZ5XGzJO9A&usqp=CAU',
         title: 'Management of Breast Cancer during the COVID-19 Pandemic.',
         description:'Nausea, vomiting, and mouth sores are all common side effects of breast cancer treatment. When you feel sick to your stomach and your mouth hurts, you may start to dread mealtimes.Yet eating a balanced diet is especially important when you have breast cancer. Proper nutrition helps your body heal from treatment. Eating right will keep you at a healthy weight and help preserve your muscle strength.\n'
     },
     {
         id: '4',
-        img: 'https://affairscloud.com/breast-cancer-awareness-month-2020-1st-31st-october/',
+        img: 'https://www.intimina.com/blog/wp-content/uploads/2014/09/INTIMINA-130-sexuality-after-breast-cancer.jpg',
         title: 'Management of Breast Cancer during the COVID-19 Pandemic.',
         description:'Nausea, vomiting, and mouth sores are all common side effects of breast cancer treatment. When you feel sick to your stomach and your mouth hurts, you may start to dread mealtimes.Yet eating a balanced diet is especially important when you have breast cancer. Proper nutrition helps your body heal from treatment. Eating right will keep you at a healthy weight and help preserve your muscle strength.\n'
     },
     {
         id: '5',
-        img: 'https://affairscloud.com/breast-cancer-awareness-month-2020-1st-31st-october/',
+        img: 'https://www.mybuckhannon.com/wp-content/uploads/2019/10/breast-cancer-awareness-month.jpg',
         title: 'For Women with Breast Cancer, Regular Exercise May Improve Survival',
         description:'Nausea, vomiting, and mouth sores are all common side effects of breast cancer treatment. When you feel sick to your stomach and your mouth hurts, you may start to dread mealtimes.Yet eating a balanced diet is especially important when you have breast cancer. Proper nutrition helps your body heal from treatment. Eating right will keep you at a healthy weight and help preserve your muscle strength.\n'
     },
     {
         id: '6',
-        img: 'https://affairscloud.com/breast-cancer-awareness-month-2020-1st-31st-october/',
+        img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQN9M5Q1gGKU2BPveyjHo_PqR8XFZ5XGzJO9A&usqp=CAU',
         title: 'Breast Cancer and Nutrition: Tips for Maintaining a Healthy Diet',
         description:'Nausea, vomiting, and mouth sores are all common side effects of breast cancer treatment. When you feel sick to your stomach and your mouth hurts, you may start to dread mealtimes.Yet eating a balanced diet is especially important when you have breast cancer. Proper nutrition helps your body heal from treatment. Eating right will keep you at a healthy weight and help preserve your muscle strength.\n'
     },
 
 ]
+function getColor(i){ 
+    return "hsl(" + 360 * Math.random() + ',' +
+               (25+ 70 * Math.random()) + '%,' + 
+               (85+ 10 * Math.random()) + '%)'
+  }
 const HomeScreen = ()=>
 {
     const defaultWomanUri = Image.resolveAssetSource(woman).uri
@@ -74,13 +80,16 @@ const HomeScreen = ()=>
                        
                    </View>
                 </View>
+                <View style={styles.container2}>
                 <Card containerStyle={styles.card}>
                 
                 <QuickSandBold style={styles.quote}>Never give up. Life is worth living. There is life after cancer.</QuickSandBold>
                 </Card>
-                <FlatList contentContainerStyle={{justifyContent:'center'}} style={styles.list} horizontal={true} data={Data} showsHorizontalScrollIndicator={false} keyExtractor={(item, index) => index.toString()} renderItem={({item:rowData})=>{
+                <QuickSandSemiBold style={styles.heading}>News Feed <Entypo name="arrow-long-right" style={{fontWeight: 'bold'}} color={colors.black}/></QuickSandSemiBold>
+                <FlatList contentContainerStyle={{justifyContent:'center'}} style={styles.list} horizontal={true} data={Data} showsHorizontalScrollIndicator={false} keyExtractor={(item, index) => index.toString()} renderItem={({item:rowData,index})=>{
+                   var i={index}
                 return(
-                   <ArticleCard id={rowData.index} img_uri={rowData.img} title={rowData.title} description={rowData.description} article_url="abc">
+                   <ArticleCard id={rowData.index} img_uri={rowData.img} title={rowData.title} description={rowData.description} style={[styles.articleCard,{backgroundColor:getColor(i)}]} >
 
                    </ArticleCard>
                 );
@@ -90,7 +99,7 @@ const HomeScreen = ()=>
                 <Card containerStyle={styles.card2}>
                 <QuickSandBold style={styles.quote}>Fight like a girl.</QuickSandBold>
                 </Card>
-
+                </View>
             </ScrollView>
         </SafeAreaView>
     )
@@ -102,6 +111,12 @@ const styles=  StyleSheet.create(
         container:{
             width: Dimensions.get('window').width,
             height: Dimensions.get('window').height
+
+        },
+        container2:{
+            width: Dimensions.get('window').width,
+            height: 'auto',
+            flexDirection: 'column'
 
         },
         top_area:{
@@ -265,7 +280,30 @@ const styles=  StyleSheet.create(
             backgroundColor: colors.tertiary
         },
         list:{
-            width: Dimensions.get('window').width,
+             
+        },
+        heading:{
+            marginStart:20,
+            marginTop:20,
+            fontSize:18
+        },
+        articleCard:{
+         
+
+                width: 250,
+                elevation: 10,
+                borderRadius: 20,
+                flexDirection: 'column',
+                alignItems: 'center',
+                marginBottom: 20,
+                paddingVertical:25,
+                justifyContent: 'center',
+                alignSelf: 'center',
+                height : 180,
+                
+               
             
+                
         }
+      
         });

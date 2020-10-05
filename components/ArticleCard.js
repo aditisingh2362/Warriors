@@ -8,71 +8,60 @@ import { Icon, Card, Button } from 'react-native-elements'
 import QuickSandMedium from '../constants/QuickSandMedium'
 import QuickSandRegular from '../constants/QuickSandRegular'
 
-const ArticleCard = ({id, img_uri, title, description, article_url}) => {
+const ArticleCard = ({id, img_uri, title, description, style}) => {
     const navigation=useNavigation();
 
     return (
         <Card
-            containerStyle={styles.container}
-            onPress={() => navigation.navigate('Details', {id,img_uri, title, description, article_url})}
+            containerStyle={[styles.container, style]}
+            onPress={() => navigation.navigate('Details', {id,img_uri, title, description})}
             >
-            <View style={{flex:1, flexDirection:'row', justifyContent: 'space-around'}}>
+           
             <Image
                 source={{uri: img_uri.toString()}}
                 style={styles.image}
             />
             <QuickSandMedium style={styles.headline}>{title}</QuickSandMedium>
-            </View>
-            <Card.Divider></Card.Divider>
+        
             
-           <QuickSandRegular style={styles.description}>{description}</QuickSandRegular>
-           <QuickSandRegular style={styles.article_url}>See full article</QuickSandRegular>
         </Card>
     )
 }
+
 
 export default ArticleCard
 
 const styles = StyleSheet.create({
     container: {
 
-        width: Dimensions.get('window').width,
+        width: 250,
         elevation: 10,
-        borderRadius: 6,
+        borderRadius: 20,
         flexDirection: 'column',
-        alignItems: 'center',
-        marginBottom: 0,
-        paddingVertical:12,
-        paddingHorizontal:15,
-        justifyContent: 'center',
-        alignSelf: 'center'
+        alignItems: 'flex-start',
+        marginBottom: 20,
+        justifyContent: 'flex-start',
+        alignSelf: 'center',
+        height : 200,
+    
         },
     image: {
-        height: 50,
-        width: 50,
-        borderRadius: 50,
-        alignSelf: 'flex-start',
-        justifyContent: 'flex-start'
+        height: 70,
+        width: 70,
+        borderRadius: 70,
+        justifyContent:'center',
+        alignSelf:'center',
+        marginBottom:10,
+        borderWidth:1,
+        borderColor:colors.black
+       
     },
 
     headline: {
         color: colors.black,
-        fontSize: 15,
-        alignSelf: 'flex-end',
-        justifyContent: 'flex-end'
+        fontSize: 14,
+       
 
     },
-    description:{
-        color: colors.black,
-        fontSize: 12,
-
-
-
-    },
-    article_url:{
-        color: colors.navyBlue,
-        fontSize:12,
-        textAlign:'left',
-        textDecorationLine:'underline'
-    }
+ 
 })
