@@ -30,7 +30,9 @@ const SignupScreen = () => {
                     <TouchableHighlight style={styles.login_button}>
                         <QuickSandRegular style={styles.login_text}>Create account</QuickSandRegular>
                     </TouchableHighlight>
-                    <QuickSandRegular style={{alignSelf:'center',marginBottom:25}}>Already have an account?<QuickSandRegular style={{textDecorationLine:'underline', color:colors.tertiary}}>Login</QuickSandRegular></QuickSandRegular>
+
+                    <QuickSandRegular style={{alignSelf:'center',marginBottom:25}}>Already have an account?<Text style={{textDecorationLine:'underline', color:colors.tertiary}}>Login</Text></QuickSandRegular>
+
                     <View style={{flex:1, flexDirection:'row', width :Dimensions.get('window').width, justifyContent: 'space-between'}}>
                         <View style={styles.design}></View>
                         <View style={styles.design2}></View>
