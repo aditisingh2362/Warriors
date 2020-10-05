@@ -1,11 +1,12 @@
 
 import { StyleSheet, Text, View, SafeAreaView, Dimensions, TextInput, Button,TouchableHighlight, ScrollView } from 'react-native'
-
+import React from 'react'
 import { colors } from '../constants/theme'
 import QuickSandBold from '../constants/QuickSandBold.js'
 import QuickSandSemiBold from '../constants/QuickSandBold.js'
 import QuickSandMedium from '../constants/QuickSandMedium.js'
 import QuickSandRegular from '../constants/QuickSandRegular'
+import QuickSandRegularInput from '../constants/QuickSandRegularInput.js'
 
 
 
@@ -15,16 +16,16 @@ const SignupScreen = () => {
             <SafeAreaView style={styles.container}>
                 <ScrollView>
                     <View style={styles.text_area}>
-                    <QuickSemiSandBold style={styles.welcome}>Welcome,</QuickSemiSandBold>
+                    <QuickSandSemiBold style={styles.welcome}>Welcome,</QuickSandSemiBold>
                     <QuickSandMedium style={styles.continue}>Signup to continue!</QuickSandMedium>
                     </View>
-                    <QuickSemiSandBold style={styles.slogan}>Supporting the <Text style={{ color:colors.tertiary}}>Fighters</Text>, Admiring the <QuickSandBold style={{ color:colors.tertiary}}>Survivors</QuickSandBold>, Honoring the <QuickSandBold style={{ color:colors.tertiary, fontWeight:"bold"}}>Taken</QuickSandBold></QuickSemiSandBold>
+                    <QuickSandBold style={styles.slogan}>Supporting the <Text style={{ color:colors.tertiary}}>Fighters</Text>, Admiring the <Text style={{ color:colors.tertiary}}>Survivors</Text>, Honoring the <Text style={{ color:colors.tertiary}}>Taken</Text></QuickSandBold>
                     <View style={styles.input_area}>
-                        <QuickSandRegular placeholder='Full Name' style={styles.name_box} numberOfLines={1} clearButtonMode='while-editing' returnKeyType='next'/>
-                        <QuickSandRegular placeholder='Contact Number' style={styles.email_box} multiline={false}clearButtonMode='while-editing' returnKeyType='next'/>
-                        <QuickSandRegular placeholder='Email' style={styles.email_box} multiline={false} clearButtonMode='while-editing'returnKeyType='next'/>
-                        <QuickSandRegular placeholder='Password' secureTextEntry={true} style={styles.password_box} multiline={false} returnKeyType='next'/>
-                        <QuickSandRegular placeholder='Confirm Password' secureTextEntry={true} style={styles.password_box} multiline={false} returnKeyType='done'/>
+                        <QuickSandRegularInput placeholder='Full Name' style={styles.name_box} numberOfLines={1} clearButtonMode='while-editing' returnKeyType='next'/>
+                        <QuickSandRegularInput placeholder='Contact Number' style={styles.email_box} multiline={false}clearButtonMode='while-editing' returnKeyType='next'/>
+                        <QuickSandRegularInput placeholder='Email' style={styles.email_box} multiline={false} clearButtonMode='while-editing'returnKeyType='next'/>
+                        <QuickSandRegularInput placeholder='Password' secureTextEntry={true} style={styles.password_box} multiline={false} returnKeyType='next'/>
+                        <QuickSandRegularInput placeholder='Confirm Password' secureTextEntry={true} style={styles.password_box} multiline={false} returnKeyType='done'/>
                     </View>
                     <TouchableHighlight style={styles.login_button}>
                         <QuickSandRegular style={styles.login_text}>Create account</QuickSandRegular>
@@ -55,7 +56,6 @@ const styles = StyleSheet.create({
             slogan:{
                 justifyContent:'center',
                 textAlign:'center',
-                fontSize:25,
                 marginTop:20,
             
             },
