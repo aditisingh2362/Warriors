@@ -44,7 +44,7 @@ const ExamineScreen = () => {
         'Place your thumb and forefinger on the tissue around the nipple and press. Look for any abnormal discharge.'
     }
   ];
-  renderI = ({ item, index }) => {
+  renderItem = ({ item, index }) => {
     return (
       <View style={styles.selfExamCard}>
         <Image
@@ -65,7 +65,7 @@ const ExamineScreen = () => {
       <View style={styles.selfExamContainer}>
         <Carousel
           data={entries}
-          renderItem={renderI}
+          renderItem={renderItem}
           sliderWidth={Dimensions.get('window').width}
           itemWidth={300}
           onSnapToItem={index => setIndex(index)}
