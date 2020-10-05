@@ -16,7 +16,8 @@ const colors = {
     lightPink: '#ffecf2',
     redPink:'#f7536e',
     pastelPink:'#ffd1dc',
-    lightLilac:'#ffefef'
+    lightLilac:'#fdfff5',
+    navyBlue: '#000080'
   };
   
   const sizes = {

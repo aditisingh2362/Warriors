@@ -1,34 +1,68 @@
-import React, { useState } from 'react'
-import { StyleSheet, Text, View, SafeAreaView, Dimensions, TextInput,TouchableHighlight, FlatList, ScrollView, Image } from 'react-native'
+import React from 'react';
+import { StyleSheet, Text, View, SafeAreaView, Dimensions, TouchableHighlight, FlatList, ScrollView, Image } from 'react-native'
 import { Icon, Card, Button } from 'react-native-elements'
-import { colors,load,fontFamily } from '../constants/theme'
-import * as Font from 'expo-font';
-import { useFonts } from '@use-expo/font';
-import { AppLoading } from 'expo';
+import { colors} from '../constants/theme'
 import woman from '../assets/woman.png';
+import QuickSandSemiBold from '../constants/QuickSandSemiBold'
+import QuickSandMedium from '../constants/QuickSandMedium'
+import QuickSandRegular from '../constants/QuickSandRegular'
+import QuickSandBold from '../constants/QuickSandBold'
+import ArticleCard from '../components/ArticleCard.js'
 
+const Data=[
+    {
+        id: '1',
+        img: 'https://affairscloud.com/breast-cancer-awareness-month-2020-1st-31st-october/',
+        title: 'Breast Cancer and Nutrition: Tips for Maintaining a Healthy Diet',
+        description:'Nausea, vomiting, and mouth sores are all common side effects of breast cancer treatment. When you feel sick to your stomach and your mouth hurts, you may start to dread mealtimes.Yet eating a balanced diet is especially important when you have breast cancer. Proper nutrition helps your body heal from treatment. Eating right will keep you at a healthy weight and help preserve your muscle strength.\n'
+    },
+    {
+        id: '2',
+        img: 'https://affairscloud.com/breast-cancer-awareness-month-2020-1st-31st-october/',
+        title: 'For Women with Breast Cancer, Regular Exercise May Improve Survival',
+        description:'Nausea, vomiting, and mouth sores are all common side effects of breast cancer treatment. When you feel sick to your stomach and your mouth hurts, you may start to dread mealtimes.Yet eating a balanced diet is especially important when you have breast cancer. Proper nutrition helps your body heal from treatment. Eating right will keep you at a healthy weight and help preserve your muscle strength.\n'
+    },
+    {
+        id: '3',
+        img: 'https://affairscloud.com/breast-cancer-awareness-month-2020-1st-31st-october/',
+        title: 'Management of Breast Cancer during the COVID-19 Pandemic.',
+        description:'Nausea, vomiting, and mouth sores are all common side effects of breast cancer treatment. When you feel sick to your stomach and your mouth hurts, you may start to dread mealtimes.Yet eating a balanced diet is especially important when you have breast cancer. Proper nutrition helps your body heal from treatment. Eating right will keep you at a healthy weight and help preserve your muscle strength.\n'
+    },
+    {
+        id: '4',
+        img: 'https://affairscloud.com/breast-cancer-awareness-month-2020-1st-31st-october/',
+        title: 'Management of Breast Cancer during the COVID-19 Pandemic.',
+        description:'Nausea, vomiting, and mouth sores are all common side effects of breast cancer treatment. When you feel sick to your stomach and your mouth hurts, you may start to dread mealtimes.Yet eating a balanced diet is especially important when you have breast cancer. Proper nutrition helps your body heal from treatment. Eating right will keep you at a healthy weight and help preserve your muscle strength.\n'
+    },
+    {
+        id: '5',
+        img: 'https://affairscloud.com/breast-cancer-awareness-month-2020-1st-31st-october/',
+        title: 'For Women with Breast Cancer, Regular Exercise May Improve Survival',
+        description:'Nausea, vomiting, and mouth sores are all common side effects of breast cancer treatment. When you feel sick to your stomach and your mouth hurts, you may start to dread mealtimes.Yet eating a balanced diet is especially important when you have breast cancer. Proper nutrition helps your body heal from treatment. Eating right will keep you at a healthy weight and help preserve your muscle strength.\n'
+    },
+    {
+        id: '6',
+        img: 'https://affairscloud.com/breast-cancer-awareness-month-2020-1st-31st-october/',
+        title: 'Breast Cancer and Nutrition: Tips for Maintaining a Healthy Diet',
+        description:'Nausea, vomiting, and mouth sores are all common side effects of breast cancer treatment. When you feel sick to your stomach and your mouth hurts, you may start to dread mealtimes.Yet eating a balanced diet is especially important when you have breast cancer. Proper nutrition helps your body heal from treatment. Eating right will keep you at a healthy weight and help preserve your muscle strength.\n'
+    },
+
+]
 const HomeScreen = ()=>
 {
     const defaultWomanUri = Image.resolveAssetSource(woman).uri
-    const [loaded,error] = useFonts({
-        'Mightype-Script': require('../assets/fonts/Mightype-Script.otf'),
-        'Quicksand-Bold': require('../assets/fonts/Quicksand-Bold.ttf'),
-        'Quicksand-Medium': require('../assets/fonts/Quicksand-Medium.ttf'),
-       });
 
-if(!loaded)
-{
-    return null;
-}
+
+
     return(
 
-        <SafeAreaView>
+        <SafeAreaView style={styles.container}>
             <ScrollView>
                 <View style={styles.top_area}>
                     <View style={styles.profile_area}>
                    <View style={styles.profile_text}>
-                       <Text style={styles.name}>Emily Parker</Text>
-                       <Text style={styles.email}>emil.parker@gmail.com</Text>
+                       <QuickSandSemiBold style={styles.name}>Emily Parker</QuickSandSemiBold>
+                       <QuickSandMedium style={styles.email}>emil.parker@gmail.com</QuickSandMedium>
                    </View>
                    <Image style={styles.profile_pic} source={{uri : defaultWomanUri}}>
                    </Image>
@@ -36,32 +70,27 @@ if(!loaded)
                    <View style={styles.button_area}>
                        <Button buttonStyle={styles.edit_button}  raised={true} type='outline' title="Edit" titleStyle={styles.edit_text} icon={<Icon name='edit' size={20} color={colors.tertiary} style={{marginStart:10}}></Icon>} ></Button>
                        <Button buttonStyle={styles.logout_button} raised={true} type='outline' title="Logout" titleStyle={styles.edit_text}  ></Button>
-                   {/* <TouchableHighlight style={styles.edit_button}>
-                       <View style={styles.button_styling}>
-
-                       
-                        <Text style={styles.edit_text}>Edit</Text>
-                        
-                        </View>
-                       
-                    </TouchableHighlight> */}
-                    {/* <TouchableHighlight style={styles.logout_button}>
-                       <View style={styles.button_styling}>
-
-                       
-                        <Text style={styles.edit_text}>Logout</Text>
-                        {/* <Icon name='log-out' size={20} color={colors.tertiary} style={{marginStart:10}}></Icon> 
-                        </View>
-                       
-                    </TouchableHighlight> */}
+                   
                        
                    </View>
                 </View>
                 <Card containerStyle={styles.card}>
-                <Text style={styles.cardTitle}>Daily Dose of Motivation</Text>
-                    {/* <Card.Divider style={styles.cardDivider}/> */}
-                <Text style={styles.quote}>Never give up. Life is worth living. There is life after cancer.</Text>
+                
+                <QuickSandBold style={styles.quote}>Never give up. Life is worth living. There is life after cancer.</QuickSandBold>
                 </Card>
+                <FlatList contentContainerStyle={{justifyContent:'center'}} style={styles.list} horizontal={true} data={Data} showsHorizontalScrollIndicator={false} keyExtractor={(item, index) => index.toString()} renderItem={({item:rowData})=>{
+                return(
+                   <ArticleCard id={rowData.index} img_uri={rowData.img} title={rowData.title} description={rowData.description} article_url="abc">
+
+                   </ArticleCard>
+                );
+            }} />
+
+               
+                <Card containerStyle={styles.card2}>
+                <QuickSandBold style={styles.quote}>Fight like a girl.</QuickSandBold>
+                </Card>
+
             </ScrollView>
         </SafeAreaView>
     )
@@ -70,6 +99,11 @@ export default HomeScreen
 
 const styles=  StyleSheet.create(
     {
+        container:{
+            width: Dimensions.get('window').width,
+            height: Dimensions.get('window').height
+
+        },
         top_area:{
             backgroundColor:colors.redPink,
             width : Dimensions.get('window').width,
@@ -79,7 +113,7 @@ const styles=  StyleSheet.create(
         shadowOffset: { width: 0, height: 2 },
         shadowOpacity: 0.5,
         shadowRadius: 2,
-        elevation: 25,
+        elevation: 15,
             
         },
         profile_area:{
@@ -117,13 +151,11 @@ const styles=  StyleSheet.create(
         },
         name:{
             color:colors.white,
-            fontFamily: fontFamily.fontFamilyMedium,
             textAlign:'left',
             fontSize:20,
         },
         email:{
             color:colors.white,
-            fontFamily: fontFamily.fontFamilyMedium,
             textAlign:'left',
             fontSize:14
         },
@@ -181,7 +213,6 @@ const styles=  StyleSheet.create(
             flex:1
         },
           edit_text:{
-            fontFamily:'Quicksand-Medium',
             color: colors.tertiary,
             alignSelf:'center',
             justifyContent:'center'
@@ -190,30 +221,40 @@ const styles=  StyleSheet.create(
 
         },
         card:{
-            backgroundColor: colors.lightPink,
+            backgroundColor: colors.lightLilac,
             borderRadius:20,
             shadowColor: '#000',
             shadowOffset: { width: 0, height: 2 },
             shadowOpacity: 0.5,
             shadowRadius: 2,
-            elevation: 10,
-            marginBottom:20,
+            elevation: 25,
             marginTop:40,
             borderColor:colors.tertiary,
-            borderWidth:2
+            borderWidth:0
+        },
+        card2:{
+            backgroundColor: colors.lightLilac,
+            borderRadius:20,
+            shadowColor: '#000',
+            shadowOffset: { width: 0, height: 2 },
+            shadowOpacity: 0.5,
+            shadowRadius: 2,
+            elevation: 25,
+            borderColor:colors.tertiary,
+            borderWidth:0,
+            justifyContent:'flex-end',
+            marginBottom:40
         },
         cardTitle:{
-            fontFamily: fontFamily.fontFamilyBold,
             color:colors.tertiary,
-            fontSize:18,
+            fontSize:15,
             textAlign:'center',
             marginBottom:5
             
         },
         quote:{
-            fontFamily: fontFamily.fontFamilyCursive,
-            color:colors.black,
-            fontSize:27,
+            color:colors.tertiary,
+            fontSize:18,
             textAlign:'center',
             marginBottom:5,
             fontWeight:'900'
@@ -222,5 +263,9 @@ const styles=  StyleSheet.create(
         cardDivider:{
             height: 2,
             backgroundColor: colors.tertiary
+        },
+        list:{
+            width: Dimensions.get('window').width,
+            
         }
         });
