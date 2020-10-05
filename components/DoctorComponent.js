@@ -2,6 +2,7 @@ import React from 'react';
 import SearchDoctor from './consult-doctor/SearchDoctor';
 import DoctorProfile from './consult-doctor/DoctorProfile';
 import { createStackNavigator } from '@react-navigation/stack';
+import Profile from './profile/Profile';
 
 const Stack = createStackNavigator();
 
@@ -10,7 +11,7 @@ const DoctorComponent = () => {
     <Stack.Navigator>
       <Stack.Screen
         name='Search'
-        component={SearchDoctor}
+        component={Profile}
         options={{ headerShown: false }}
       />
       <Stack.Screen
