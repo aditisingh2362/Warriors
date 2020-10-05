@@ -1,13 +1,13 @@
 import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
-import SignupScreen from '../screens/SignupScreen.js'
+import LoginScreen from '../screens/LoginScreen.js'
 
 
 
 const HomeScreen = () => {
     return (
         <View style={styles.container}>
-            <SignupScreen></SignupScreen>
+          <LoginScreen></LoginScreen>
         </View>
     )
 }
