@@ -43,20 +43,22 @@ const StoryScreen = () => {
         >
           <Searchbar
             placeholder="Search"
-            iconColor={colors.secondary}
+            iconColor={colors.tertiary}
             style={{
               marginHorizontal: 10,
               marginTop: 10,
-              borderRadius: 10,
+              borderRadius: 50,
               width: 300,
             }}
             inputStyle={{ fontSize: 14 }}
             onChangeText={setarticle}
             value={article}
           />
-          <TouchableOpacity onPress={() => navigation.navigate("Add")}>
-            <Entypo name="pencil" size={35} color={colors.secondary} />
+          <View style={{backgroundColor: colors.tertiary,padding: 7,marginRight: 5, borderRadius: 36}}>
+          <TouchableOpacity onPress={() => navigation.navigate("Add")} >
+              <Entypo name="pencil" size={35} color={colors.white} />
           </TouchableOpacity>
+          </View>
         </View>
         <View style={{flexDirection:'row',alignItems:'center', justifyContent: 'flex-start'}}>
           <QuickSandBold style={styles.text}>Popular Stories</QuickSandBold>
