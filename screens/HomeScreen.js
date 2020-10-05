@@ -1,10 +1,13 @@
 import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
+import LoginScreen from '../screens/LoginScreen.js'
+
+
 
 const HomeScreen = () => {
     return (
         <View style={styles.container}>
-            <Text>Home Screen</Text>
+          <LoginScreen></LoginScreen>
         </View>
     )
 }
@@ -16,5 +19,6 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center'
-    }
-})
+    },
+    
+});
