@@ -1,30 +1,29 @@
 import React from 'react'
-import { StyleSheet, Text, View, Image, Dimensions } from 'react-native'
+import { StyleSheet, Image} from 'react-native'
 import { colors } from '../constants/theme';
 import Entypo from 'react-native-vector-icons/Entypo';
-import { TouchableOpacity } from 'react-native-gesture-handler';
 import { useNavigation } from '@react-navigation/native';
 import { Icon, Card, Button } from 'react-native-elements'
 import QuickSandMedium from '../constants/QuickSandMedium'
 import QuickSandRegular from '../constants/QuickSandRegular'
+import {  TouchableOpacity } from 'react-native-gesture-handler';
 
-const ArticleCard = ({id, img_uri, title, description, style}) => {
+const ArticleCard = ({id, img_uri, title, description, content,publisher, style}) => {
     const navigation=useNavigation();
 
     return (
-        <Card
-            containerStyle={[styles.container, style]}
-            onPress={() => navigation.navigate('Details', {id,img_uri, title, description})}
-            >
-           
-            <Image
-                source={{uri: img_uri.toString()}}
-                style={styles.image}
-            />
-            <QuickSandMedium style={styles.headline}>{title}</QuickSandMedium>
+        <TouchableOpacity  onPress={() => navigation.navigate('ArticleScreen', {id, img_uri, title, description,content,publisher})}>
+            <Card
+                containerStyle={[styles.container, style]}>
+                <Image
+                    source={{uri: img_uri.toString()}}
+                    style={styles.image}
+                />
+                <QuickSandMedium style={styles.headline}>{title}</QuickSandMedium>
         
             
-        </Card>
+            </Card>
+        </TouchableOpacity>
     )
 }
 

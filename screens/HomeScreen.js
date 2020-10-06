@@ -1,6 +1,6 @@
 import React from 'react';
-import { StyleSheet, Text, View, SafeAreaView, Dimensions, TouchableHighlight, FlatList, ScrollView, Image } from 'react-native'
-import { Icon, Card, Button } from 'react-native-elements'
+import { StyleSheet, Text, View, SafeAreaView, Dimensions, TouchableHighlight, Image } from 'react-native'
+import {  Card, Button } from 'react-native-elements'
 import { colors} from '../constants/theme'
 import woman from '../assets/woman.png';
 import QuickSandSemiBold from '../constants/QuickSandSemiBold'
@@ -8,44 +8,58 @@ import QuickSandMedium from '../constants/QuickSandMedium'
 import QuickSandRegular from '../constants/QuickSandRegular'
 import QuickSandBold from '../constants/QuickSandBold'
 import ArticleCard from '../components/ArticleCard.js'
-import Entypo from 'react-native-vector-icons/Entypo';
+import Icon from 'react-native-vector-icons/AntDesign';
+import { ScrollView, FlatList, TouchableOpacity } from 'react-native-gesture-handler';
+
 
 const Data=[
     {
         id: '1',
         img: 'https://www.intimina.com/blog/wp-content/uploads/2014/09/INTIMINA-130-sexuality-after-breast-cancer.jpg',
         title: 'Breast Cancer and Nutrition: Tips for Maintaining a Healthy Diet',
-        description:'Nausea, vomiting, and mouth sores are all common side effects of breast cancer treatment. When you feel sick to your stomach and your mouth hurts, you may start to dread mealtimes.Yet eating a balanced diet is especially important when you have breast cancer. Proper nutrition helps your body heal from treatment. Eating right will keep you at a healthy weight and help preserve your muscle strength.\n'
+        description:'Nausea, vomiting, and mouth sores are all common side effects of breast cancer treatment. When you feel sick to your stomach and your mouth hurts, you may start to dread mealtimes.Yet eating a balanced diet is especially important when you have breast cancer. Proper nutrition helps your body heal from treatment. Eating right will keep you at a healthy weight and help preserve your muscle strength.\n',
+        content:'abc',
+        publisher:'xyz'
     },
     {
         id: '2',
         img: 'https://www.mybuckhannon.com/wp-content/uploads/2019/10/breast-cancer-awareness-month.jpg',
         title: 'For Women with Breast Cancer, Regular Exercise May Improve Survival',
-        description:'Nausea, vomiting, and mouth sores are all common side effects of breast cancer treatment. When you feel sick to your stomach and your mouth hurts, you may start to dread mealtimes.Yet eating a balanced diet is especially important when you have breast cancer. Proper nutrition helps your body heal from treatment. Eating right will keep you at a healthy weight and help preserve your muscle strength.\n'
+        description:'Nausea, vomiting, and mouth sores are all common side effects of breast cancer treatment. When you feel sick to your stomach and your mouth hurts, you may start to dread mealtimes.Yet eating a balanced diet is especially important when you have breast cancer. Proper nutrition helps your body heal from treatment. Eating right will keep you at a healthy weight and help preserve your muscle strength.\n',
+        content:'abc',
+        publisher:'xyz'
     },
     {
         id: '3',
         img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQN9M5Q1gGKU2BPveyjHo_PqR8XFZ5XGzJO9A&usqp=CAU',
         title: 'Management of Breast Cancer during the COVID-19 Pandemic.',
-        description:'Nausea, vomiting, and mouth sores are all common side effects of breast cancer treatment. When you feel sick to your stomach and your mouth hurts, you may start to dread mealtimes.Yet eating a balanced diet is especially important when you have breast cancer. Proper nutrition helps your body heal from treatment. Eating right will keep you at a healthy weight and help preserve your muscle strength.\n'
+        description:'Nausea, vomiting, and mouth sores are all common side effects of breast cancer treatment. When you feel sick to your stomach and your mouth hurts, you may start to dread mealtimes.Yet eating a balanced diet is especially important when you have breast cancer. Proper nutrition helps your body heal from treatment. Eating right will keep you at a healthy weight and help preserve your muscle strength.\n',
+        content:'abc',
+        publisher:'xyz'
     },
     {
         id: '4',
         img: 'https://www.intimina.com/blog/wp-content/uploads/2014/09/INTIMINA-130-sexuality-after-breast-cancer.jpg',
         title: 'Management of Breast Cancer during the COVID-19 Pandemic.',
-        description:'Nausea, vomiting, and mouth sores are all common side effects of breast cancer treatment. When you feel sick to your stomach and your mouth hurts, you may start to dread mealtimes.Yet eating a balanced diet is especially important when you have breast cancer. Proper nutrition helps your body heal from treatment. Eating right will keep you at a healthy weight and help preserve your muscle strength.\n'
+        description:'Nausea, vomiting, and mouth sores are all common side effects of breast cancer treatment. When you feel sick to your stomach and your mouth hurts, you may start to dread mealtimes.Yet eating a balanced diet is especially important when you have breast cancer. Proper nutrition helps your body heal from treatment. Eating right will keep you at a healthy weight and help preserve your muscle strength.\n',
+        content:'abc',
+        publisher:'xyz'
     },
     {
         id: '5',
         img: 'https://www.mybuckhannon.com/wp-content/uploads/2019/10/breast-cancer-awareness-month.jpg',
         title: 'For Women with Breast Cancer, Regular Exercise May Improve Survival',
-        description:'Nausea, vomiting, and mouth sores are all common side effects of breast cancer treatment. When you feel sick to your stomach and your mouth hurts, you may start to dread mealtimes.Yet eating a balanced diet is especially important when you have breast cancer. Proper nutrition helps your body heal from treatment. Eating right will keep you at a healthy weight and help preserve your muscle strength.\n'
+        description:'Nausea, vomiting, and mouth sores are all common side effects of breast cancer treatment. When you feel sick to your stomach and your mouth hurts, you may start to dread mealtimes.Yet eating a balanced diet is especially important when you have breast cancer. Proper nutrition helps your body heal from treatment. Eating right will keep you at a healthy weight and help preserve your muscle strength.\n',
+        content:'abc',
+        publisher:'xyz'
     },
     {
         id: '6',
         img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQN9M5Q1gGKU2BPveyjHo_PqR8XFZ5XGzJO9A&usqp=CAU',
         title: 'Breast Cancer and Nutrition: Tips for Maintaining a Healthy Diet',
-        description:'Nausea, vomiting, and mouth sores are all common side effects of breast cancer treatment. When you feel sick to your stomach and your mouth hurts, you may start to dread mealtimes.Yet eating a balanced diet is especially important when you have breast cancer. Proper nutrition helps your body heal from treatment. Eating right will keep you at a healthy weight and help preserve your muscle strength.\n'
+        description:'Nausea, vomiting, and mouth sores are all common side effects of breast cancer treatment. When you feel sick to your stomach and your mouth hurts, you may start to dread mealtimes.Yet eating a balanced diet is especially important when you have breast cancer. Proper nutrition helps your body heal from treatment. Eating right will keep you at a healthy weight and help preserve your muscle strength.\n',
+        content:'abc',
+        publisher:'xyz'
     },
 
 ]
@@ -66,39 +80,35 @@ const HomeScreen = ()=>
             <ScrollView>
                 <View style={styles.top_area}>
                     <View style={styles.profile_area}>
-                   <View style={styles.profile_text}>
-                       <QuickSandSemiBold style={styles.name}>Emily Parker</QuickSandSemiBold>
-                       <QuickSandMedium style={styles.email}>emil.parker@gmail.com</QuickSandMedium>
-                   </View>
-                   <Image style={styles.profile_pic} source={{uri : defaultWomanUri}}>
-                   </Image>
-                   </View>
+                        <View style={styles.profile_text}>
+                            <QuickSandSemiBold style={styles.name}>Emily Parker</QuickSandSemiBold>
+                            <QuickSandMedium style={styles.email}>emil.parker@gmail.com</QuickSandMedium>
+                        </View>
+                        <Image style={styles.profile_pic} source={{uri : defaultWomanUri}}>
+                        </Image>
+                    </View>
                    <View style={styles.button_area}>
-                       <Button buttonStyle={styles.edit_button}  raised={true} type='outline' title="Edit" titleStyle={styles.edit_text} icon={<Icon name='edit' size={20} color={colors.tertiary} style={{marginStart:10}}></Icon>} ></Button>
-                       <Button buttonStyle={styles.logout_button} raised={true} type='outline' title="Logout" titleStyle={styles.edit_text}  ></Button>
-                   
-                       
-                   </View>
+                       <Button buttonStyle={styles.edit_button}  raised={true} type='outline' title="Profile" titleStyle={styles.edit_text} icon={<Icon name='user' size={20} color={colors.tertiary} style={{marginStart:10}}></Icon>} ></Button>
+                       <Button buttonStyle={styles.logout_button} raised={true} type='outline' title="Logout" titleStyle={styles.edit_text} icon={<Icon name='logout' size={20} color={colors.tertiary} style={{marginStart:10}}></Icon>}  ></Button>
+                    </View>
                 </View>
                 <View style={styles.container2}>
-                <Card containerStyle={styles.card}>
-                
-                <QuickSandBold style={styles.quote}>Never give up. Life is worth living. There is life after cancer.</QuickSandBold>
-                </Card>
-                <QuickSandSemiBold style={styles.heading}>News Feed <Entypo name="arrow-long-right" style={{fontWeight: 'bold'}} color={colors.black}/></QuickSandSemiBold>
-                <FlatList contentContainerStyle={{justifyContent:'center'}} style={styles.list} horizontal={true} data={Data} showsHorizontalScrollIndicator={false} keyExtractor={(item, index) => index.toString()} renderItem={({item:rowData,index})=>{
-                   var i={index}
-                return(
-                   <ArticleCard id={rowData.index} img_uri={rowData.img} title={rowData.title} description={rowData.description} style={[styles.articleCard,{backgroundColor:getColor(i)}]} >
-
-                   </ArticleCard>
+                    <Card containerStyle={styles.card}>
+                        <QuickSandBold style={styles.quote}>Never give up. Life is worth living. There is life after cancer.</QuickSandBold>
+                    </Card>
+                    <QuickSandSemiBold style={styles.heading}>News Feed <Icon name="arrowright" style={{fontWeight: 'bold'}} color={colors.black}/></QuickSandSemiBold>
+                    <FlatList contentContainerStyle={{justifyContent:'center'}} style={styles.list} horizontal={true} data={Data} showsHorizontalScrollIndicator={false} keyExtractor={(item, index) => index.toString()} renderItem={({item:rowData,index})=>{
+                        var i={index}
+                        return(
+                            <ArticleCard id={rowData.index} img_uri={rowData.img} title={rowData.title} description={rowData.description} content={rowData.content} publisher={rowData.publisher} style={[styles.articleCard,{backgroundColor:getColor(i)}]} >
+                            </ArticleCard>
                 );
             }} />
 
                
-                <Card containerStyle={styles.card2}>
-                <QuickSandBold style={styles.quote}>Fight like a girl.</QuickSandBold>
-                </Card>
+                    <Card containerStyle={styles.card2}>
+                        <QuickSandBold style={styles.quote}>Fight like a girl.</QuickSandBold>
+                    </Card>
                 </View>
             </ScrollView>
         </SafeAreaView>
@@ -125,10 +135,10 @@ const styles=  StyleSheet.create(
             flexDirection:'column',
             flex : 1,
             shadowColor: '#000',
-        shadowOffset: { width: 0, height: 2 },
-        shadowOpacity: 0.5,
-        shadowRadius: 2,
-        elevation: 15,
+            shadowOffset: { width: 0, height: 2 },
+            shadowOpacity: 0.5,
+            shadowRadius: 2,
+            elevation: 15,
             
         },
         profile_area:{
@@ -150,20 +160,15 @@ const styles=  StyleSheet.create(
             marginTop:20,
             marginBottom:20,
             height:45,
-           
-    
-           
-            
-        },
+           },
         
         profile_text:{
-          marginStart:50,
-          marginBottom:20,
-          alignSelf:'flex-start',
-          justifyContent:'flex-start',
+            marginStart:50,
+            marginBottom:20,
+            alignSelf:'flex-start',
+            justifyContent:'flex-start',
          
-          
-        },
+          },
         name:{
             color:colors.white,
             textAlign:'left',
@@ -185,19 +190,15 @@ const styles=  StyleSheet.create(
             backgroundColor:colors.accent,
             borderRadius:45,
             marginEnd:10,
-
-           
-            
-    
-          },
-          button_styling:{
+        },
+        button_styling:{
             flexDirection: 'row',
             flex: 1,
             alignItems: 'center',
             justifyContent:'center',
             width: 120,
           },
-          edit_button:{
+        edit_button:{
             width:110,
             borderRadius:90,
             backgroundColor:colors.white,
@@ -227,7 +228,7 @@ const styles=  StyleSheet.create(
             elevation: 10,
             flex:1
         },
-          edit_text:{
+        edit_text:{
             color: colors.tertiary,
             alignSelf:'center',
             justifyContent:'center'
@@ -300,10 +301,6 @@ const styles=  StyleSheet.create(
                 justifyContent: 'center',
                 alignSelf: 'center',
                 height : 180,
-                
-               
-            
-                
-        }
+            }
       
         });
