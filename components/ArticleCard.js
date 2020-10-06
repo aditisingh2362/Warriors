@@ -12,7 +12,7 @@ const ArticleCard = ({id, img_uri, title, description, content,publisher, style}
     const navigation=useNavigation();
 
     return (
-        <TouchableOpacity  onPress={() => navigation.navigate('ArticleScreen', {id, img_uri, title, description,content,publisher})}>
+        <TouchableOpacity>
             <Card
                 containerStyle={[styles.container, style]}>
                 <Image

@@ -119,8 +119,8 @@ export default HomeScreen
 const styles=  StyleSheet.create(
     {
         container:{
-            width: Dimensions.get('window').width,
-            height: Dimensions.get('window').height
+            width: '100%',
+            height: '100%'
 
         },
         container2:{
@@ -237,7 +237,7 @@ const styles=  StyleSheet.create(
 
         },
         card:{
-            backgroundColor: colors.lightLilac,
+            backgroundColor: colors.cream,
             borderRadius:20,
             shadowColor: '#000',
             shadowOffset: { width: 0, height: 2 },
@@ -249,7 +249,7 @@ const styles=  StyleSheet.create(
             borderWidth:0
         },
         card2:{
-            backgroundColor: colors.lightLilac,
+            backgroundColor: colors.cream,
             borderRadius:20,
             shadowColor: '#000',
             shadowOffset: { width: 0, height: 2 },
