@@ -13,35 +13,46 @@ import { Feather, AntDesign, Fontisto } from '@expo/vector-icons';
 import { colors } from '../../constants/theme';
 import { LinearGradient } from 'expo-linear-gradient';
 import data from '../../constants/doctor';
+import QuickSandBold from '../../constants/QuickSandBold';
+import QuickSandRegular from '../../constants/QuickSandRegular';
+import QuickSandMedium from '../../constants/QuickSandMedium';
 
 const Category = () => {
   return (
     <View style={styles.categoryContainer}>
-      <Text style={styles.categoryTitle}>Category</Text>
+      <QuickSandBold style={styles.categoryTitle}>Category</QuickSandBold>
       <View style={styles.categoryCardsContainer}>
         <View style={styles.categoryCard}>
           <View style={styles.categoryImage}>
             <AntDesign name='heart' size={24} color={colors.red} />
           </View>
-          <Text style={styles.categoryText}>Medical oncologist</Text>
+          <QuickSandMedium style={styles.categoryText}>
+            Medical oncologist
+          </QuickSandMedium>
         </View>
         <View style={styles.categoryCard}>
           <View style={styles.categoryImage}>
             <Fontisto name='doctor' size={24} color={colors.gray} />
           </View>
-          <Text style={styles.categoryText}>Surgical oncologist</Text>
+          <QuickSandMedium style={styles.categoryText}>
+            Surgical oncologist
+          </QuickSandMedium>
         </View>
         <View style={styles.categoryCard}>
           <View style={styles.categoryImage}>
             <AntDesign name='heart' size={24} color={colors.red} />
           </View>
-          <Text style={styles.categoryText}>Breast surgeon</Text>
+          <QuickSandMedium style={styles.categoryText}>
+            Breast surgeon
+          </QuickSandMedium>
         </View>
         <View style={styles.categoryCard}>
           <View style={styles.categoryImage}>
             <AntDesign name='heart' size={24} color={colors.red} />
           </View>
-          <Text style={styles.categoryText}>Plastic surgeon</Text>
+          <QuickSandMedium style={styles.categoryText}>
+            Plastic surgeon
+          </QuickSandMedium>
         </View>
       </View>
     </View>
@@ -51,7 +62,9 @@ const Category = () => {
 const Header = () => {
   return (
     <LinearGradient style={styles.header} colors={[colors.white, colors.gray2]}>
-      <Text style={styles.headerText}>Find your desired specialist</Text>
+      <QuickSandBold style={styles.headerText}>
+        Find your desired specialist
+      </QuickSandBold>
       <View style={styles.searchContainer}>
         <TextInput
           placeholder={'Search for doctor'}
@@ -88,10 +101,12 @@ const TopDoctorCarousel = props => {
           />
         </View>
         <View style={{ paddingTop: 10 }}>
-          <Text style={styles.doctorDetails}>{item.name}</Text>
-          <Text style={{ ...styles.doctorDetails, fontSize: 12 }}>
+          <QuickSandBold style={styles.doctorDetails}>
+            {item.name}
+          </QuickSandBold>
+          <QuickSandMedium style={{ ...styles.doctorDetails, fontSize: 12 }}>
             {item.specialisation}{' '}
-          </Text>
+          </QuickSandMedium>
         </View>
       </TouchableOpacity>
     );
@@ -103,7 +118,7 @@ const TopDoctorCarousel = props => {
       end={{ x: 1, y: 1 }}
       colors={[colors.secondary, colors.white]}
     >
-      <Text style={styles.topDoctorText}>Top Doctors</Text>
+      <QuickSandBold style={styles.topDoctorText}>Top Doctors</QuickSandBold>
       <FlatList
         data={data}
         renderItem={doctorCard}

@@ -13,6 +13,10 @@ import Constant from 'expo-constants';
 import { colors } from '../../constants/theme';
 import { MaterialIcons, Entypo } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
+import QuickSandBold from '../../constants/QuickSandBold';
+import QuickSandRegular from '../../constants/QuickSandRegular';
+import QuickSandMedium from '../../constants/QuickSandMedium';
+
 const openDial = no => {
   if (Platform.OS === 'android') {
     Linking.openURL(`tel:${no}`);
@@ -37,8 +41,10 @@ const DoctorDetails = ({ data }) => {
           />
         </View>
         <View style={{ padding: 10 }}>
-          <Text style={styles.doctorName}>{data.name}</Text>
-          <Text style={styles.category}>{data.specialisation}</Text>
+          <QuickSandBold style={styles.doctorName}>{data.name}</QuickSandBold>
+          <QuickSandMedium style={styles.category}>
+            {data.specialisation}
+          </QuickSandMedium>
           <View style={{ paddingTop: 15, flexDirection: 'row' }}>
             <TouchableOpacity
               style={styles.call}
@@ -58,7 +64,7 @@ const DoctorDetails = ({ data }) => {
         </View>
       </View>
       <View style={styles.bio}>
-        <Text style={styles.bioText}>{data.bio}</Text>
+        <QuickSandMedium style={styles.bioText}>{data.bio}</QuickSandMedium>
       </View>
     </LinearGradient>
   );
@@ -67,7 +73,7 @@ const DoctorDetails = ({ data }) => {
 const Availabilty = () => {
   return (
     <View style={{ paddingLeft: 10, paddingRight: 10, paddingTop: 10 }}>
-      <Text style={styles.availableMonth}>October 2020</Text>
+      <QuickSandBold style={styles.availableMonth}>October 2020</QuickSandBold>
       <View
         style={{
           paddingTop: 10,
@@ -78,27 +84,29 @@ const Availabilty = () => {
         }}
       >
         <View style={styles.dateCard}>
-          <Text style={{ fontSize: 12 }}>Sat</Text>
-          <Text style={{ fontSize: 22 }}>08</Text>
+          <QuickSandMedium style={{ fontSize: 12 }}>Sat</QuickSandMedium>
+          <QuickSandBold style={{ fontSize: 22 }}>08</QuickSandBold>
         </View>
         <View style={styles.dateCardSelected}>
-          <Text style={{ fontSize: 12, color: colors.white }}>Sun</Text>
-          <Text
+          <QuickSandMedium style={{ fontSize: 12, color: colors.white }}>
+            Sun
+          </QuickSandMedium>
+          <QuickSandBold
             style={{
               fontSize: 22,
               color: colors.white
             }}
           >
             09
-          </Text>
+          </QuickSandBold>
         </View>
         <View style={styles.dateCard}>
-          <Text style={{ fontSize: 12 }}>Mon</Text>
-          <Text style={{ fontSize: 22 }}>10</Text>
+          <QuickSandMedium style={{ fontSize: 12 }}>Mon</QuickSandMedium>
+          <QuickSandBold style={{ fontSize: 22 }}>10</QuickSandBold>
         </View>
         <View style={styles.dateCard}>
-          <Text style={{ fontSize: 12 }}>Tue</Text>
-          <Text style={{ fontSize: 22 }}>11</Text>
+          <QuickSandMedium style={{ fontSize: 12 }}>Tue</QuickSandMedium>
+          <QuickSandBold style={{ fontSize: 22 }}>11</QuickSandBold>
         </View>
       </View>
       <View
@@ -110,19 +118,29 @@ const Availabilty = () => {
         }}
       >
         <View style={styles.time}>
-          <Text style={{ color: 'black', fontSize: 13 }}>03:00 pm</Text>
+          <QuickSandMedium style={{ color: 'black', fontSize: 13 }}>
+            03:00 pm
+          </QuickSandMedium>
         </View>
         <View style={styles.time}>
-          <Text style={{ color: 'black', fontSize: 13 }}>03:00 pm</Text>
+          <QuickSandMedium style={{ color: 'black', fontSize: 13 }}>
+            03:00 pm
+          </QuickSandMedium>
         </View>
         <View style={styles.time}>
-          <Text style={{ color: 'black', fontSize: 13 }}>03:00 pm</Text>
+          <QuickSandMedium style={{ color: 'black', fontSize: 13 }}>
+            03:00 pm
+          </QuickSandMedium>
         </View>
         <View style={styles.time}>
-          <Text style={{ color: 'black', fontSize: 13 }}>03:00 pm</Text>
+          <QuickSandMedium style={{ color: 'black', fontSize: 13 }}>
+            03:00 pm
+          </QuickSandMedium>
         </View>
         <View style={styles.time}>
-          <Text style={{ color: 'black', fontSize: 13 }}>03:00 pm</Text>
+          <QuickSandMedium style={{ color: 'black', fontSize: 13 }}>
+            03:00 pm
+          </QuickSandMedium>
         </View>
       </View>
     </View>
@@ -135,14 +153,14 @@ const DoctorProfile = ({ route }) => {
       <DoctorDetails data={route.params.data} />
       <Availabilty />
       <View style={styles.bookAppointment}>
-        <Text
+        <QuickSandBold
           style={{
             color: 'white',
             fontSize: 15
           }}
         >
           Book an Appointment
-        </Text>
+        </QuickSandBold>
       </View>
     </View>
   );
