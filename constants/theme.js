@@ -1,13 +1,22 @@
+import * as Font from 'expo-font';
+import { useFonts } from '@use-expo/font';
+
 const colors = {
-  accent: '#f18b8b',
-  primary: '#f9a5b3',
-  secondary: '#eb75a2',
-  tertiary: '#e4417e',
-  black: '#000000',
-  white: '#FFFFFF',
-  gray: '#9DA3B4',
-  gray2: '#C5CCD6',
-  red: '#FF0000',
+  accent: "#f18b8b",
+  primary: "#f9a5b3",
+  secondary: "#eb75a2",
+  tertiary: "#e4417e",
+  black: "#000000",
+  white: "#FFFFFF",
+  gray: "#9DA3B4",
+  gray2: "#C5CCD6",
+  red: "#FF0000",
+  lightGrey: "#f5f5f5",
+  lightPink: "#ffecf2",
+  redPink: "#f7536e",
+  pastelPink: "#ffd1dc",
+  lightLilac: "#ffefef",
+  cream:'#fdfff5'
 };
 
 const sizes = {

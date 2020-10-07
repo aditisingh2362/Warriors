@@ -6,7 +6,7 @@ import {
   RichEditor,
   RichToolbar,
 } from "react-native-pell-rich-editor";
-import Entypo from 'react-native-vector-icons/Entypo';
+import Entypo from "react-native-vector-icons/Entypo";
 import { colors } from "../constants/theme";
 import QuickSandBold from "../constants/QuickSandBold";
 
@@ -15,7 +15,6 @@ const AddStory = () => {
   const video = require("../assets/video.png"); //icon for Addvideo
   const RichText = useRef(); //reference to the RichEditor component
   const [article, setArticle] = useState("");
-  
 
   function onPressAddImage() {
     // you can easily add images from your gallery
@@ -33,7 +32,11 @@ const AddStory = () => {
 
   return (
     <ScrollView style={styles.container}>
-      <QuickSandBold style={{fontSize: 21, marginVertical: 10, textAlign: 'center'}}>Share your Story</QuickSandBold>
+      <QuickSandBold
+        style={{ fontSize: 21, marginVertical: 10, textAlign: "center" }}
+      >
+        Share your Story
+      </QuickSandBold>
       <RichEditor
         disabled={false}
         containerStyle={styles.editor}
@@ -67,9 +70,23 @@ const AddStory = () => {
         }}
         insertVideo={insertVideo}
       />
-      <TouchableOpacity style={{alignItems:'center', marginLeft: 70,width: 200,marginVertical: 10,borderWidth: 1, borderColor: "purple", borderRadius: 10, marginBottom: 10,backgroundColor: 'white', marginBottom: 30}} onPress={()=>console.log("")}>
+      <TouchableOpacity
+        style={{
+          alignItems: "center",
+          marginLeft: 70,
+          width: 200,
+          marginVertical: 10,
+          borderWidth: 1,
+          borderColor: "purple",
+          borderRadius: 10,
+          marginBottom: 10,
+          backgroundColor: "white",
+          marginBottom: 30,
+        }}
+        onPress={() => console.log("")}
+      >
         <QuickSandBold style={[styles.text]}>
-            <Entypo name="check" size= {16} color="purple"/>  Publish Article
+          <Entypo name="check" size={16} color="purple" /> Publish Article
         </QuickSandBold>
       </TouchableOpacity>
     </ScrollView>
@@ -113,7 +130,7 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 15,
     margin: 10,
-    color: colors.black
+    color: colors.black,
   },
   tib: {
     textAlign: "center",

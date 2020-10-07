@@ -3,6 +3,9 @@ import { StyleSheet, Text, View, Dimensions, Image } from 'react-native';
 import Constant from 'expo-constants';
 import { colors } from '../constants/theme';
 import Carousel from 'react-native-snap-carousel';
+import QuickSandBold from '../constants/QuickSandBold';
+import QuickSandRegular from '../constants/QuickSandRegular';
+import QuickSandMedium from '../constants/QuickSandMedium';
 
 const ExamineScreen = () => {
   const [index, setIndex] = useState(0);
@@ -44,7 +47,7 @@ const ExamineScreen = () => {
         'Place your thumb and forefinger on the tissue around the nipple and press. Look for any abnormal discharge.'
     }
   ];
-  renderI = ({ item, index }) => {
+  renderItem = ({ item, index }) => {
     return (
       <View style={styles.selfExamCard}>
         <Image
@@ -52,7 +55,7 @@ const ExamineScreen = () => {
           source={item.image}
         />
         <View style={{ padding: 10 }}>
-          <Text style={styles.cardText}>{item.text}</Text>
+          <QuickSandMedium style={styles.cardText}>{item.text}</QuickSandMedium>
         </View>
       </View>
     );
@@ -60,12 +63,14 @@ const ExamineScreen = () => {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Text style={styles.title}>Breast Self Examination</Text>
+        <QuickSandBold style={styles.title}>
+          Breast Self Examination
+        </QuickSandBold>
       </View>
       <View style={styles.selfExamContainer}>
         <Carousel
           data={entries}
-          renderItem={renderI}
+          renderItem={renderItem}
           sliderWidth={Dimensions.get('window').width}
           itemWidth={300}
           onSnapToItem={index => setIndex(index)}
@@ -73,7 +78,9 @@ const ExamineScreen = () => {
       </View>
       <View style={styles.stepContainer}>
         <View style={styles.stepText}>
-          <Text style={{ color: colors.tertiary }}>{index + 1}</Text>
+          <QuickSandMedium style={{ color: colors.tertiary }}>
+            {index + 1}
+          </QuickSandMedium>
         </View>
       </View>
     </View>
@@ -91,7 +98,7 @@ const styles = StyleSheet.create({
     padding: 15
   },
   title: {
-    fontSize: 30,
+    fontSize: 28,
     textAlign: 'center',
     color: colors.black,
     marginTop: Constant.statusBarHeight

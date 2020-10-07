@@ -7,41 +7,52 @@ import {
   FlatList,
   TouchableOpacity
 } from 'react-native';
-
 import Constants from 'expo-constants';
 import { TextInput } from 'react-native';
 import { Feather, AntDesign, Fontisto } from '@expo/vector-icons';
 import { colors } from '../../constants/theme';
 import { LinearGradient } from 'expo-linear-gradient';
+import data from '../../constants/doctor';
+import QuickSandBold from '../../constants/QuickSandBold';
+import QuickSandRegular from '../../constants/QuickSandRegular';
+import QuickSandMedium from '../../constants/QuickSandMedium';
 
 const Category = () => {
   return (
     <View style={styles.categoryContainer}>
-      <Text style={styles.categoryTitle}>Category</Text>
+      <QuickSandBold style={styles.categoryTitle}>Category</QuickSandBold>
       <View style={styles.categoryCardsContainer}>
         <View style={styles.categoryCard}>
           <View style={styles.categoryImage}>
             <AntDesign name='heart' size={24} color={colors.red} />
           </View>
-          <Text style={styles.categoryText}>Medical oncologist</Text>
+          <QuickSandMedium style={styles.categoryText}>
+            Medical oncologist
+          </QuickSandMedium>
         </View>
         <View style={styles.categoryCard}>
           <View style={styles.categoryImage}>
             <Fontisto name='doctor' size={24} color={colors.gray} />
           </View>
-          <Text style={styles.categoryText}>Surgical oncologist</Text>
+          <QuickSandMedium style={styles.categoryText}>
+            Surgical oncologist
+          </QuickSandMedium>
         </View>
         <View style={styles.categoryCard}>
           <View style={styles.categoryImage}>
             <AntDesign name='heart' size={24} color={colors.red} />
           </View>
-          <Text style={styles.categoryText}>Breast surgeon</Text>
+          <QuickSandMedium style={styles.categoryText}>
+            Breast surgeon
+          </QuickSandMedium>
         </View>
         <View style={styles.categoryCard}>
           <View style={styles.categoryImage}>
             <AntDesign name='heart' size={24} color={colors.red} />
           </View>
-          <Text style={styles.categoryText}>Plastic surgeon</Text>
+          <QuickSandMedium style={styles.categoryText}>
+            Plastic surgeon
+          </QuickSandMedium>
         </View>
       </View>
     </View>
@@ -51,7 +62,9 @@ const Category = () => {
 const Header = () => {
   return (
     <LinearGradient style={styles.header} colors={[colors.white, colors.gray2]}>
-      <Text style={styles.headerText}>Find your desired specialist</Text>
+      <QuickSandBold style={styles.headerText}>
+        Find your desired specialist
+      </QuickSandBold>
       <View style={styles.searchContainer}>
         <TextInput
           placeholder={'Search for doctor'}
@@ -66,31 +79,18 @@ const Header = () => {
 };
 
 const TopDoctorCarousel = props => {
-  const data = [
-    {
-      id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
-      title: 'First Item'
-    },
-    {
-      id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
-      title: 'Second Item'
-    },
-    {
-      id: '58694a0f-3da1-471f-bd96-145571e29d72',
-      title: 'Third Item'
-    }
-  ];
-  const doctorCard = () => {
+  const doctorCard = ({ item }) => {
     return (
       <TouchableOpacity
         style={styles.doctorCard}
-        onPress={() => props.navigation.navigate('DoctorProfile')}
+        onPress={() =>
+          props.navigation.navigate('DoctorProfile', { data: item })
+        }
       >
         <View>
           <Image
             source={{
-              uri:
-                'https://images.unsplash.com/photo-1582971805810-b24306e0afe7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60'
+              uri: item.img
             }}
             style={{
               width: 80,
@@ -101,10 +101,12 @@ const TopDoctorCarousel = props => {
           />
         </View>
         <View style={{ paddingTop: 10 }}>
-          <Text style={styles.doctorDetails}>Dr. Selkon Kane </Text>
-          <Text style={{ ...styles.doctorDetails, fontSize: 12 }}>
-            Breast Surgeon{' '}
-          </Text>
+          <QuickSandBold style={styles.doctorDetails}>
+            {item.name}
+          </QuickSandBold>
+          <QuickSandMedium style={{ ...styles.doctorDetails, fontSize: 12 }}>
+            {item.specialisation}{' '}
+          </QuickSandMedium>
         </View>
       </TouchableOpacity>
     );
@@ -116,7 +118,7 @@ const TopDoctorCarousel = props => {
       end={{ x: 1, y: 1 }}
       colors={[colors.secondary, colors.white]}
     >
-      <Text style={styles.topDoctorText}>Top Doctors</Text>
+      <QuickSandBold style={styles.topDoctorText}>Top Doctors</QuickSandBold>
       <FlatList
         data={data}
         renderItem={doctorCard}

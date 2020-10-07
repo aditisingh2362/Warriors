@@ -10,6 +10,7 @@ import DoctorComponent from './DoctorComponent';
 import DoctorOption from './DoctorOption';
 import { colors } from '../constants/theme';
 import StoryScreenStack from '../screens/StoryScreenStack';
+import Profile from './profile/Profile';
 
 const Tab = createBottomTabNavigator();
 

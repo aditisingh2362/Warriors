@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 import VerticleBlogCard from "../components/VerticleBlogCard";
 import HorizontalBlogCard from "../components/HorizontalBlogCard";
 import { Searchbar } from "react-native-paper";
@@ -43,24 +43,41 @@ const StoryScreen = () => {
         >
           <Searchbar
             placeholder="Search"
-            iconColor={colors.secondary}
+            iconColor={colors.tertiary}
             style={{
               marginHorizontal: 10,
               marginTop: 10,
-              borderRadius: 10,
+              borderRadius: 50,
               width: 300,
             }}
             inputStyle={{ fontSize: 14 }}
             onChangeText={setarticle}
             value={article}
           />
-          <TouchableOpacity onPress={() => navigation.navigate("Add")}>
-            <Entypo name="pencil" size={35} color={colors.secondary} />
-          </TouchableOpacity>
+          <View
+            style={{
+              backgroundColor: colors.tertiary,
+              padding: 7,
+              marginRight: 5,
+              borderRadius: 36,
+            }}
+          >
+            <TouchableOpacity onPress={() => navigation.navigate("Add")}>
+              <Entypo name="pencil" size={35} color={colors.white} />
+            </TouchableOpacity>
+          </View>
         </View>
-        <View style={{flexDirection:'row',alignItems:'center', justifyContent: 'flex-start'}}>
+        <View
+          style={{
+            flexDirection: "row",
+            alignItems: "center",
+            justifyContent: "flex-start",
+          }}
+        >
           <QuickSandBold style={styles.text}>Popular Stories</QuickSandBold>
-          <QuickSandRegular style={[styles.text,{color: colors.secondary, fontSize: 40}]}>
+          <QuickSandRegular
+            style={[styles.text, { color: colors.secondary, fontSize: 40 }]}
+          >
             |
           </QuickSandRegular>
         </View>
@@ -84,9 +101,17 @@ const StoryScreen = () => {
             }}
           />
         </View>
-        <View style={{flexDirection:'row',alignItems:'center', justifyContent: 'flex-start'}}>
+        <View
+          style={{
+            flexDirection: "row",
+            alignItems: "center",
+            justifyContent: "flex-start",
+          }}
+        >
           <QuickSandBold style={styles.text}>Recent Stories</QuickSandBold>
-          <QuickSandRegular style={[styles.text,{color: colors.secondary, fontSize: 40}]}>
+          <QuickSandRegular
+            style={[styles.text, { color: colors.secondary, fontSize: 40 }]}
+          >
             |
           </QuickSandRegular>
         </View>
@@ -103,7 +128,7 @@ const styles = StyleSheet.create({
     flex: 1,
     top: 30,
     marginBottom: 60,
-    },
+  },
   text: {
     fontSize: 27,
     marginLeft: 12,
