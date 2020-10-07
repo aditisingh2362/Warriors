@@ -53,12 +53,12 @@ const LoginScreen = () => {
       >
         <QuickSandRegular>Don't have an account? </QuickSandRegular>
 
-        <Text
+        <QuickSandRegular
           style={{ textDecorationLine: "underline", color: colors.tertiary }}
         >
           {" "}
           Signup
-        </Text>
+        </QuickSandRegular>
       </TouchableOpacity>
       <View
         style={{
@@ -66,6 +66,8 @@ const LoginScreen = () => {
           flexDirection: "row",
           width: Dimensions.get("window").width,
           justifyContent: "space-between",
+          position: 'absolute',
+          bottom: 0,
         }}
       >
         <View style={styles.design}></View>
@@ -82,6 +84,9 @@ const styles = StyleSheet.create({
     top: 0,
     backgroundColor: colors.white,
     flexDirection: "column",
+    height: '100%',
+    width:'100%'
+
   },
   slogan: {
     justifyContent: "center",
@@ -90,7 +95,7 @@ const styles = StyleSheet.create({
   },
   text_area: {
     backgroundColor: colors.redPink,
-    height: 270,
+    height: 200,
     borderBottomLeftRadius: 0,
     borderBottomRightRadius: 300,
     shadowColor: "#000",
@@ -190,6 +195,7 @@ const styles = StyleSheet.create({
     alignSelf: "flex-start",
     width: 90,
     flex: 0,
+    bottom: 0
   },
   design2: {
     backgroundColor: colors.pastelPink,

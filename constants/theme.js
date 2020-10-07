@@ -1,3 +1,6 @@
+import * as Font from 'expo-font';
+import { useFonts } from '@use-expo/font';
+
 const colors = {
   accent: "#f18b8b",
   primary: "#f9a5b3",
@@ -13,6 +16,7 @@ const colors = {
   redPink: "#f7536e",
   pastelPink: "#ffd1dc",
   lightLilac: "#ffefef",
+  cream:'#fdfff5'
 };
 
 const sizes = {

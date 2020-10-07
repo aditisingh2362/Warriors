@@ -92,7 +92,17 @@ const SignupScreen = () => {
                     }}
                 >
                     <View style={styles.design}></View>
-                    <View style={styles.design2}></View>
+                    
+                </View>
+                <View
+                    style={{
+                        flex: 1,
+                        flexDirection: "row",
+                        width: Dimensions.get("window").width,
+                        justifyContent:'flex-end'
+                    }}
+                >
+                   <View style={styles.design2}></View>
                 </View>
             </ScrollView>
         </SafeAreaView>
@@ -107,6 +117,7 @@ const styles = StyleSheet.create({
         top: 0,
         backgroundColor: colors.white,
         flexDirection: "column",
+        height: '100%'
     },
     slogan: {
         justifyContent: "center",
@@ -236,8 +247,7 @@ const styles = StyleSheet.create({
     },
     design2: {
         backgroundColor: colors.pastelPink,
-        height: 200,
-        borderTopLeftRadius: 100,
+        height: 100,
         borderBottomLeftRadius: 100,
         shadowColor: "#000",
         shadowOffset: { width: 0, height: 2 },
