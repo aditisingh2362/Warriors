@@ -40,13 +40,6 @@ const SignupScreen = () => {
                         returnKeyType="next"
                     />
                     <QuickSandRegularInput
-                        placeholder="Contact Number"
-                        style={styles.email_box}
-                        multiline={false}
-                        clearButtonMode="while-editing"
-                        returnKeyType="next"
-                    />
-                    <QuickSandRegularInput
                         placeholder="Email"
                         style={styles.email_box}
                         multiline={false}
@@ -79,31 +72,11 @@ const SignupScreen = () => {
           <Text
                         style={{ textDecorationLine: "underline", color: colors.tertiary }}
                     >
-                        Login
+                        <Text>{' '}</Text>Login
           </Text>
                 </QuickSandRegular>
 
-                <View
-                    style={{
-                        flex: 1,
-                        flexDirection: "row",
-                        width: Dimensions.get("window").width,
-                        justifyContent: "space-between",
-                    }}
-                >
-                    <View style={styles.design}></View>
-                    
-                </View>
-                <View
-                    style={{
-                        flex: 1,
-                        flexDirection: "row",
-                        width: Dimensions.get("window").width,
-                        justifyContent:'flex-end'
-                    }}
-                >
-                   <View style={styles.design2}></View>
-                </View>
+               
             </ScrollView>
         </SafeAreaView>
     );
@@ -228,37 +201,6 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.5,
         shadowRadius: 2,
         elevation: 10,
-    },
-    design: {
-        backgroundColor: colors.pastelPink,
-        height: 100,
-        borderTopLeftRadius: 0,
-        borderTopRightRadius: 100,
-        shadowColor: "#000",
-        shadowOffset: { width: 0, height: 2 },
-        shadowOpacity: 0.5,
-        shadowRadius: 2,
-        elevation: 20,
-        justifyContent: "flex-start",
-        marginTop: 10,
-        alignSelf: "flex-start",
-        width: 90,
-        flex: 0,
-    },
-    design2: {
-        backgroundColor: colors.pastelPink,
-        height: 100,
-        borderBottomLeftRadius: 100,
-        shadowColor: "#000",
-        shadowOffset: { width: 0, height: 2 },
-        shadowOpacity: 0.5,
-        shadowRadius: 2,
-        elevation: 20,
-        justifyContent: "flex-end",
-        marginTop: 10,
-        alignSelf: "flex-end",
-        width: 90,
-        flex: 0,
     },
     forgot_password: {
         color: colors.tertiary,

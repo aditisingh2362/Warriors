@@ -60,18 +60,6 @@ const LoginScreen = () => {
           Signup
         </QuickSandRegular>
       </TouchableOpacity>
-      <View
-        style={{
-          flex: 1,
-          flexDirection: "row",
-          width: Dimensions.get("window").width,
-          justifyContent: "space-between",
-          position: 'absolute',
-          bottom: 0,
-        }}
-      >
-        <View style={styles.design}></View>
-      </View>
     </SafeAreaView>
   );
 };
@@ -178,40 +166,6 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.5,
     shadowRadius: 2,
     elevation: 10,
-  },
-
-  design: {
-    backgroundColor: colors.pastelPink,
-    height: 100,
-    borderTopLeftRadius: 0,
-    borderTopRightRadius: 100,
-    shadowColor: "#000",
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.5,
-    shadowRadius: 2,
-    elevation: 20,
-    justifyContent: "flex-start",
-    marginTop: 10,
-    alignSelf: "flex-start",
-    width: 90,
-    flex: 0,
-    bottom: 0
-  },
-  design2: {
-    backgroundColor: colors.pastelPink,
-    height: 200,
-    borderTopLeftRadius: 100,
-    borderBottomLeftRadius: 100,
-    shadowColor: "#000",
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.5,
-    shadowRadius: 2,
-    elevation: 20,
-    justifyContent: "flex-end",
-    marginTop: 10,
-    alignSelf: "flex-end",
-    width: 90,
-    flex: 0,
   },
   forgot_password: {
     color: colors.tertiary,
