@@ -62,10 +62,7 @@ const Profile = props => {
         <View style={styles.profileImage}>
           <Image
             style={{ width: 120, height: 120, borderRadius: 120 }}
-            source={{
-              uri:
-                'https://images.unsplash.com/photo-1499887142886-791eca5918cd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60'
-            }}
+            source={require('../../assets/woman.png')}
           />
         </View>
         <View
