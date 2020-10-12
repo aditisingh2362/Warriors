@@ -1,9 +1,14 @@
-import { SET_LOGIN_TRUE } from "./loginTypes";
+import { SET_LOGIN_TRUE, SET_LOGIN_FALSE } from './loginTypes';
 
-function setLoginTrue() {
+export const setLoginTrue = ({ email, fullName }) => {
   return {
     type: SET_LOGIN_TRUE,
+    payload: { email, fullName }
   };
-}
+};
 
-export default setLoginTrue;
+export const setLoginFalse = () => {
+  return {
+    type: SET_LOGIN_FALSE
+  };
+};

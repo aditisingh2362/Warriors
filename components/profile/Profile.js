@@ -15,8 +15,10 @@ import data from '../../constants/doctor';
 import QuickSandBold from '../../constants/QuickSandBold';
 import QuickSandRegular from '../../constants/QuickSandRegular';
 import QuickSandMedium from '../../constants/QuickSandMedium';
+import { useSelector } from 'react-redux';
 
 const Profile = props => {
+  const profile = useSelector(state => state);
   const renderItem = ({ item }) => {
     return (
       <View style={styles.appointment}>
@@ -81,9 +83,10 @@ const Profile = props => {
       </View>
 
       <View style={styles.info}>
-        <QuickSandBold style={{ fontSize: 22 }}>Emily Parker</QuickSandBold>
-        <QuickSandRegular>emil.parker@gmail.com</QuickSandRegular>
-        <QuickSandRegular>+91-9309002911</QuickSandRegular>
+        <QuickSandBold style={{ fontSize: 22 }}>
+          {profile.fullName}
+        </QuickSandBold>
+        <QuickSandRegular>{profile.email}</QuickSandRegular>
         <View style={styles.healthDetails}>
           <View style={styles.healthCard}>
             <Image
@@ -128,13 +131,6 @@ const Profile = props => {
             showsHorizontalScrollIndicator={false}
           />
         </View>
-      </View>
-      <View style={styles.exploreStories}>
-        <TouchableOpacity>
-          <QuickSandRegular style={styles.exploreStoriesText}>
-            Explore stories
-          </QuickSandRegular>
-        </TouchableOpacity>
       </View>
     </View>
   );
