@@ -19,7 +19,7 @@ The login screen is the first screen after the splash screen. If the user has no
 3. Home Screen
 On the home screen, the user can find her name, email and the buttons to visit her profile or to logout. In the area below, there are two cards, at the top and bottom, which display a motivational quote to keep the morale of the Warrior high. The battle with cancer is a tough one and one can starting feeling low either during the battle or after it. So its important to always keep our Warriors motivated. Hence, we came up with the idea of providing a daily dose of motivation through these quotes. In the between the cards, is the news feed, which would contain articles pertaining latest research in breast cancer or general breast cancer articles which would aid our Warriors in any way.
 
-4.Profile Dashboard  
+4. Profile Dashboard  
 The profile dashboard consists of basic details of the user, viz. Her name, her registered email id, her contact number and some basic physical details comprising her weight, height and blood type. The user can also see her scheduled appointments with the doctor or therapist as well, on the dashboard.
 
 5. Share and Read Stories of other Warriors
