@@ -6,7 +6,8 @@ import {
   SafeAreaView,
   Dimensions,
   TouchableHighlight,
-  Image
+  Image,
+  Alert
 } from 'react-native';
 import { Card, Button } from 'react-native-elements';
 import { colors } from '../constants/theme';
@@ -25,6 +26,10 @@ import {
 } from 'react-native-gesture-handler';
 import Profile from '../components/profile/Profile';
 import StoryScreen from './StoryScreen';
+import firebase from '../constants/firebase';
+import { useDispatch } from 'react-redux';
+import { setLoginFalse } from '../redux/login/loginActions';
+import { useSelector } from 'react-redux';
 const Stack = createStackNavigator();
 
 const Data = [
@@ -103,8 +108,20 @@ function getColor(i) {
   );
 }
 const HomeScreen = props => {
+  const dispatch = useDispatch();
+  const data = useSelector(state => state);
   const defaultWomanUri = Image.resolveAssetSource(woman).uri;
-
+  const logoutUser = () => {
+    firebase
+      .auth()
+      .signOut()
+      .then(() => {
+        dispatch(setLoginFalse());
+      })
+      .catch(err => {
+        Alert.alert(err.message);
+      });
+  };
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView>
@@ -112,10 +129,10 @@ const HomeScreen = props => {
           <View style={styles.profile_area}>
             <View style={styles.profile_text}>
               <QuickSandSemiBold style={styles.name}>
-                Emily Parker
+                {data.fullName}
               </QuickSandSemiBold>
               <QuickSandMedium style={styles.email}>
-                emil.parker@gmail.com
+                {data.email}
               </QuickSandMedium>
             </View>
             <Image
@@ -156,6 +173,7 @@ const HomeScreen = props => {
                   style={{ marginStart: 10 }}
                 ></Icon>
               }
+              onPress={logoutUser}
             ></Button>
           </View>
         </View>
